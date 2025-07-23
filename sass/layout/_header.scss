@@ -1,0 +1,24 @@
+@use '../abstracts/abstracts' as abs;
+@use '../base/base' as base;
+@use '../components/components' as comp;
+
+.header-principal{
+    padding-top: 100px;
+    margin-bottom: 100px;
+    .container-header-principal{
+        color: abs.$naranja;
+        text-align: center;
+    }
+}
+
+
+.header-juego{
+    .container-header-juego{
+        #pantalla-dificultad{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+}
