@@ -1,5 +1,3 @@
-import './sass/style.scss'
-
 //seleccionamos los elementos necesarios del html
 let title = document.querySelector('h1')
 let main = document.getElementById('main-principal')
@@ -16,27 +14,28 @@ let image4 = document.getElementById('image-4')
 let image5 = document.getElementById('image-5')
 let image6 = document.getElementById('image-6')
 let errorPalabra = document.getElementById('error-palabra')
+let mainJuego = document.getElementById('main-juego')
 
 
 
 //variables de musica
-let musicaFondo = new Audio ('/music/musica-fondo.mp3')
+let musicaFondo = new Audio ('/src/music/musica-fondo.mp3')
 musicaFondo.volume = 0.3
 musicaFondo.loop = true
 
-let correctWord = new Audio ('/music/palabra-correcta.wav')
+let correctWord = new Audio ('/src/music/palabra-correcta.wav')
 correctWord.volume = 1.0
 correctWord.loop = false
 
-let wrongWord = new Audio ('/music/wrong-words.wav')
+let wrongWord = new Audio ('/src/music/wrong-words.wav')
 wrongWord.volume = 0.3
 wrongWord.loop = false
 
-let gameOver = new Audio ('/music/game-over-ahorcado.wav')
+let gameOver = new Audio ('/src/music/game-over-ahorcado.wav')
 gameOver.volume = 0.7
 gameOver.loop = false
 
-let win = new Audio ('/music/win-game-ahorcado.wav')
+let win = new Audio ('/src/music/win-game-ahorcado.wav')
 win.volume = 0.1
 win.loop = false
 
@@ -200,7 +199,7 @@ function comprobarLetra(){
 function comprobarDerrota(){
     let inputLetra = document.getElementById('input-letra')
     if(fallos >= maxFallos){
-        message.textContent = `¡Has perdido todas la vidas! La respuesta era --> ${respuesta}`.toUpperCase()
+        message.textContent = `Tu voluntad fue fuerte, pero esta vez el mal ganó. ¡No te rindas, joven aprendiz! La respuesta era --> ${respuesta}`.toUpperCase()
         buttonAdivina.disabled = true
         buttonAdivina.style.pointerEvents = 'none'
         buttonRestart.style.display = 'block'
@@ -217,7 +216,7 @@ function comprobarDerrota(){
 function comprobarVictoria(){
     let inputLetra = document.getElementById('input-letra')
     if(palabraCorrecta.join(',').replaceAll(',' ,'') === respuesta){
-        message.textContent = 'Has ganado!'
+        message.textContent = '¡Plus Ultra! Has demostrado que el espíritu de un héroe vive en ti.'
         musicaFondo.pause();
         musicaFondo.currentTime = 0;
         win.play()
@@ -271,6 +270,7 @@ function mostrarSelectorDificultad() {
         btn.addEventListener('click', (e) => {
             const dificultad = e.target.getAttribute('data-dificultad');
             pantalla.style.display = 'none';
+            mainJuego.style.display = 'block'
             iniciarGame(dificultad);
         });
     });
@@ -278,6 +278,3 @@ function mostrarSelectorDificultad() {
 
 // Llama a la función al cargar la página
 document.addEventListener('DOMContentLoaded', mostrarSelectorDificultad);
-
-
-

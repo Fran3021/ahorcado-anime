@@ -1,0 +1,93 @@
+<!--Obligatorio para que el navegador lo lea perfecto en lenguaje HTML-->
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!--Aqui el titulo para los buscadores-->
+  <title>Juego Ahorcado Anime</title>
+  
+  <!--Descripcion que sale al buscarlo en el navegador-->
+  <meta name="description" content="juego_anime">
+
+  <!--Palabras claves para los buscadores en navegadores-->
+  <meta name="keywords" content="anime, juego ahorcado, game, dev">
+
+  <!--Autor de la pagina-->
+  <meta name="autor" content="Fran">
+
+  <!--Añadimos la hoja de estilo CSS o SASS-->
+  <script defer type="module" src="/src/js/main.js"></script>
+
+  <!--HOja de estilos css-->
+  <link rel="stylesheet" href="/src/css/styles.css">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!--Favicon de la pagina(icono)-->
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+  <!--Codificacion-->
+  <meta charset="UTF-8">
+
+  <!--Para que la web sea resposinve(El tamaño segun el dispositivo)-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Para algunos navegadores moviles(Color parte de arriba del HEADER)-->
+  <meta name="theme-color" content="FF0000">
+
+  <body>
+    <header class="header-juego">
+      <div class="container-header-juego">
+        <div id="pantalla-dificultad">
+          <h2>Elige la dificultad</h2>
+          <div>
+            <button class="btn-dificultad" data-dificultad="facil">Fácil</button>
+            <button class="btn-dificultad" data-dificultad="medio">Medio</button>
+            <button class="btn-dificultad" data-dificultad="dificil">Difícil</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="main-juego">
+      <div class="container-main-juego">
+        <section id="container-letras-image">
+          <div id="container-letras">
+            <div id="pregunta"></div>
+            <div id="palabra-correcta"></div>
+            <div id="palabra-incorrecta"></div>
+          </div>
+          <div id="container-image-ahorcado">
+            <img id="image-1" src="/src/img/ahorcado_grid_1.png" alt="1">
+            <img id="image-2" src="/src/img/ahorcado_grid_2.png" alt="2">
+            <img id="image-3" src="/src/img/ahorcado_grid_3.png" alt="3">
+            <img id="image-4" src="/src/img/ahorcado_grid_4.png" alt="4">
+            <img id="image-5" src="/src/img/ahorcado_grid_5.png" alt="5">
+            <img id="image-6" src="/src/img/ahorcado_grid_6.png" alt="6">
+          </div>
+        </section>
+        <section id="container-input-restart">
+          <div id="container-input">
+            <input id="input-letra" type="text" maxlength="1" placeholder="Introduce la palabra" required>
+            <button id="adivina-palabra">Prueba suerte</button>
+            <div id="error-palabra"></div>
+          </div>
+          <div id="container-restart">
+            <div id="message"></div>
+            <button id="restart-button">Reinicio</button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer-juego">
+      <div class="container-footer-juego">
+
+      </div>
+    </footer>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

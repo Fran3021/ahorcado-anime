@@ -16,7 +16,10 @@
   <meta name="autor" content="Fran">
 
   <!--Añadimos la hoja de estilo CSS o SASS-->
-  <script defer type="module" src="/main.js"></script>
+  <script defer type="module" src="/src/js/main.js"></script>
+
+  <!--HOja de estilos css-->
+  <link rel="stylesheet" href="/src/css/styles.css">
 
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -36,15 +39,29 @@
 
   <body>
     <header class="header-principal">
-      <div class="container-header-principal">
-        <h1 data-aos="fade-left" data-aos-delay="300" >Juego Ahorcado Anime</h1>
+      <div class="container-header-principal" data-aos="zoom-in" data-aos-delay="500">
+        <h1 class="title-pagina">¡Bienvenid@ a AhorcaAnime!</h1>
+        <p class="subtitle-pagina" >¿Podrás adivinar todas las palabras antes de que sea demasiado tarde?</p>
       </div>
     </header>
     <main id="main-principal">
       <div class="container-main-principal">
-        <div class="juego-myhac">
-          <img class="imagen-deku" src="/img/dark-deku.jpg" alt="dark-deku">
-          <a class="enlace-juego" href="juego.html">Iniciar</a>
+        <div class="juego-myhac" data-aos="fade-left" data-aos-delay="500" >
+          <img class="imagen-myhac" src="/src/img/dark-deku.jpg" alt="dark-deku">
+          <p class="frase-anime" >¡Demuestra que puedes convertirte en un verdadero héroe!</p>
+          <a class="enlace-juego" href="juego_myhac.html">¡Jugar!</a>
+        </div>
+
+        <div class="juego-sao" data-aos="fade-right" data-aos-delay="500" >
+          <img class="imagen-sao" src="/src/img/kirito-asuna.jpg" alt="kirito-asuna">
+          <p class="frase-anime" >¡Logra sobrevivir en SAO adivinando las palabras correctas!</p>
+          <a class="enlace-juego" href="juego_sao.html">¡Entrar al juego!</a>
+        </div>
+
+        <div class="juego-kny" data-aos="fade-left" data-aos-delay="500" >
+          <img class="imagen-kny" src="/src/img/tanjiro-nezuko.jpg" alt="tanjiro-nezuko">
+          <p class="frase-anime" >¡Adivina las palabras antes de que sea demasiado tarde para los cazadores!</p>
+          <a class="enlace-juego" href="juego_kny.html">¡Comenzar!</a>
         </div>
     </main>
     <footer class="footer-principal">

@@ -16,7 +16,13 @@
   <meta name="autor" content="Fran">
 
   <!--Añadimos la hoja de estilo CSS o SASS-->
-  <script defer type="module" src="/main.js"></script>
+  <script defer type="module" src="/src/js/main.js"></script>
+
+  <!--HOja de estilos css-->
+  <link rel="stylesheet" href="/src/css/styles.css">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!--Favicon de la pagina(icono)-->
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -52,12 +58,12 @@
             <div id="palabra-incorrecta"></div>
           </div>
           <div id="container-image-ahorcado">
-            <img id="image-1" src="/img/ahorcado_grid_1.png" alt="1">
-            <img id="image-2" src="/img/ahorcado_grid_2.png" alt="2">
-            <img id="image-3" src="/img/ahorcado_grid_3.png" alt="3">
-            <img id="image-4" src="/img/ahorcado_grid_4.png" alt="4">
-            <img id="image-5" src="/img/ahorcado_grid_5.png" alt="5">
-            <img id="image-6" src="/img/ahorcado_grid_6.png" alt="6">
+            <img id="image-1" src="/src/img/ahorcado_grid_1.png" alt="1">
+            <img id="image-2" src="/src/img/ahorcado_grid_2.png" alt="2">
+            <img id="image-3" src="/src/img/ahorcado_grid_3.png" alt="3">
+            <img id="image-4" src="/src/img/ahorcado_grid_4.png" alt="4">
+            <img id="image-5" src="/src/img/ahorcado_grid_5.png" alt="5">
+            <img id="image-6" src="/src/img/ahorcado_grid_6.png" alt="6">
           </div>
         </section>
         <section id="container-input-restart">
@@ -78,5 +84,10 @@
 
       </div>
     </footer>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
