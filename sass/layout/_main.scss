@@ -113,6 +113,8 @@
 
 #main-juego{
     display: none;
+    padding-bottom: 100px;
+    margin-bottom: 50px;
     .title-main-juego{
         font-size: 30px;
         text-align: center;
@@ -124,6 +126,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+            margin-bottom: 40px;
             #container-letras{
                 display: flex;
                 gap: 10px;
@@ -203,18 +206,62 @@
             }
         }
         #container-input-restart{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             #container-input{
+                display: flex;
+                gap: 30px;
                 position: relative;
+                #input-letra{
+                    background-color: abs.$azul-celeste;
+                    border: 0px;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    outline: none;
+                    &::placeholder{
+                        color: abs.$rojo;
+                    }
+                    &:focus{
+                        box-shadow: 0px 0px 3px 3px abs.$violeta;
+                    }
+                }
+                #adivina-palabra{
+                    background-color: abs.$rosa-fuerte;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    border: 0;
+                    color: abs.$blanco-puro;
+                    font-size: 15px;
+                }
                 #error-palabra{
                     position: absolute;
-                    right: 20%;
-                    font-size: 10px;
+                    top: 100%;
+                    right: 45%;
+                    font-size: 13px;
                     color: abs.$rojo;
                 }
             }
             #container-restart{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                #message-myhac, #message-sao, #message-kny{
+                    display: none;
+                    font-size: 15px;
+                    border: 1px solid abs.$rosa-neon;
+                    padding: 10px;
+                    color: yellow;
+                    border-radius: 10px;
+                    box-shadow: 0px 0px 5px 5px abs.$rojo;
+                }
                 #restart-button{
                     display: none;
+                    background-color: abs.$violeta;
+                    color: abs.$azul-oscuro;
+                    border: 0;
+                    padding: 5px 10px;
+                    border-radius: 5px;
                 }
             }
         }

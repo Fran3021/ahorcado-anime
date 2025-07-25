@@ -5,7 +5,9 @@ let preguntas = document.getElementById('pregunta')
 let palabrasCorrectas = document.getElementById('palabra-correcta')
 let palabrasIncorrectas = document.getElementById('palabra-incorrecta')
 let buttonAdivina = document.getElementById('adivina-palabra')
-let message = document.getElementById('message')
+let messageMyhac = document.getElementById('message-myhac')
+let messageSao = document.getElementById('message-sao')
+let messageKny = document.getElementById('message-kny')
 let buttonRestart = document.getElementById('restart-button')
 let image1 = document.getElementById('image-1')
 let image2 = document.getElementById('image-2')
@@ -199,7 +201,16 @@ function comprobarLetra(){
 function comprobarDerrota(){
     let inputLetra = document.getElementById('input-letra')
     if(fallos >= maxFallos){
-        message.textContent = `Tu voluntad fue fuerte, pero esta vez el mal ganó. ¡No te rindas, joven aprendiz! La respuesta era --> ${respuesta}`.toUpperCase()
+        if(messageMyhac){
+            messageMyhac.textContent = `Tu voluntad fue fuerte, pero esta vez el mal ganó. ¡No te rindas, joven aprendiz! La respuesta era --> ${respuesta}`.toUpperCase()
+            messageMyhac.style.display = 'block'
+        }else if(messageSao){
+            messageSao.textContent = `HP a cero… has perdido esta batalla. Pero siempre puedes volver a conectar. La respuesta era --> ${respuesta}`.toUpperCase()
+            messageSao.style.display = 'block'
+        }else if(messageKny){
+            messageKny.textContent = `Has caído… pero como Tanjiro, siempre puedes levantarte una vez más. La respuesta era --> ${respuesta}`.toUpperCase()
+            messageKny.style.display = 'block'
+        }
         buttonAdivina.disabled = true
         buttonAdivina.style.pointerEvents = 'none'
         buttonRestart.style.display = 'block'
@@ -216,7 +227,16 @@ function comprobarDerrota(){
 function comprobarVictoria(){
     let inputLetra = document.getElementById('input-letra')
     if(palabraCorrecta.join(',').replaceAll(',' ,'') === respuesta){
-        message.textContent = '¡Plus Ultra! Has demostrado que el espíritu de un héroe vive en ti.'
+        if(messageMyhac){
+            messageMyhac.textContent = '¡Plus Ultra! Has demostrado que el espíritu de un héroe vive en ti.'
+            messageMyhac.style.display = 'block'
+        }else if(messageSao){
+            messageSao.textContent = '¡Sistema liberado! Has sobrevivido al juego mortal.'
+            messageSao.style.display = 'block'
+        }else if(messageKny){
+            messageKny.textContent = '¡Respiración del éxito! Has salvado a los inocentes y honrado a tu familia.'
+            messageKny.style.display = 'block'
+        }
         musicaFondo.pause();
         musicaFondo.currentTime = 0;
         win.play()

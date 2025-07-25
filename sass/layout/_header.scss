@@ -23,7 +23,113 @@
 }
 
 
-.header-juego{
+.header-juego-myhac{
+    position: relative;
+    margin-bottom: 200px;
+    .image-principal{
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        opacity: 0.3;
+    }
+    .container-header-juego{
+        padding-top: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .title-subtitle-juego{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            h1{
+            font-size: 35px;
+            text-align: center;
+            color: abs.$azul-electrico;
+            }
+            p{
+                font-size: 20px;
+                text-align: center;
+                color: abs.$rosa-fuerte;
+            }
+        }
+        #pantalla-dificultad{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            h2{
+                font-size: 30px;
+                color: abs.$blanco-puro;
+            }
+            div{
+                display: flex;
+                gap: 10px;
+                .btn-dificultad{
+                    border: 0;
+                    background-color: abs.$verde-azulado;
+                    padding: 5px;
+                    border-radius: 5px;
+                    color: abs.$azul-oscuro;
+                }
+            }
+        }
+    }
+}
+
+.header-juego-sao{
+    position: relative;
+    margin-bottom: 200px;
+    .image-principal{
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        opacity: 0.3;
+    }
+    .container-header-juego{
+        padding-top: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .title-subtitle-juego{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            h1{
+            font-size: 35px;
+            text-align: center;
+            color: abs.$azul-electrico;
+            }
+            p{
+                font-size: 20px;
+                text-align: center;
+                color: abs.$rosa-fuerte;
+            }
+        }
+        #pantalla-dificultad{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            h2{
+                font-size: 30px;
+                color: abs.$blanco-puro;
+            }
+            div{
+                display: flex;
+                gap: 10px;
+                .btn-dificultad{
+                    border: 0;
+                    background-color: abs.$verde-azulado;
+                    padding: 5px;
+                    border-radius: 5px;
+                    color: abs.$azul-oscuro;
+                }
+            }
+        }
+    }
+}
+
+.header-juego-kny{
     position: relative;
     margin-bottom: 200px;
     .image-principal{
