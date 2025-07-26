@@ -16,7 +16,7 @@
   <meta name="autor" content="Fran">
 
   <!--Añadimos la hoja de estilo CSS o SASS-->
-  <script defer type="module" src="/src/js/main.js"></script>
+  <script defer type="module" src="/src/js/juego_sao.js"></script>
 
   <!--HOja de estilos css-->
   <link rel="stylesheet" href="/src/css/styles.css">
@@ -39,12 +39,63 @@
   <body>
     <header class="header-juego-sao">
       <img class="image-principal" src="/src/img/imagen-principal-sao.png" alt="">
+      <nav class="menu-principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#pantalla-dificultad">Jugar</a></li>
+          <li><a href="#informacion-anime">Anime</a></li>
+        </ul>
+      </nav>
       <div class="container-header-juego">
         <div class="title-subtitle-juego">
           <h1>¡Estás dentro de Sword Art Online!</h1>
           <p>Adivina las palabras… porque si fallas demasiado, es *Game Over* para ti.</p>
         </div>
-        <div id="pantalla-dificultad">
+    </header>
+    <main id="main-juego">
+      <div class="container-curiosidades-sao" id="informacion-anime">
+        <article>
+          <h2>SAO fue una novela escrita en 2002</h2>
+          <p>Reki Kawahara escribió Sword Art Online para un concurso, pero la historia excedía el límite de páginas, así que la publicó gratis en su web. ¡Y se volvió viral!</p>
+        </article>
+        <article>
+          <h2>SAO fue pionero en el género "isekai gamer"</h2>
+          <p>Antes de que existieran animes como Overlord o Log Horizon, SAO popularizó el subgénero de estar atrapado en un videojuego.</p>
+        </article>
+        <article>
+          <h2>Kirito es el único con aspecto negro completo</h2>
+          <p>En Aincrad, solo Kirito puede vestir completamente de negro porque ganó el set “Espadachín Negro” como recompensa especial por su estilo de juego solitario.</p>
+        </article>
+        <article>
+          <h2>Asuna iba a morir originalmente</h2>
+          <p>En los primeros borradores, Asuna no sobrevivía a SAO. Pero el autor se encariñó con ella y decidió hacerla parte fundamental de la historia.</p>
+        </article>
+        <article>
+          <h2>La técnica “Starburst Stream” tiene 16 golpes</h2>
+          <p>Es uno de los ataques más icónicos de Kirito. Cuando lo usa, el ritmo y la animación siguen un patrón real de 16 golpes secuenciales.</p>
+        </article>
+        <article>
+          <h2>Sword Art Online es el nombre del primer juego, no de toda la historia</h2>
+          <p>Aunque la serie se llama SAO, solo el primer arco (Aincrad) ocurre dentro del juego Sword Art Online. Luego hay otros mundos: ALfheim Online, Gun Gale Online, Underworld...</p>
+        </article>
+        <article>
+          <h2>El nombre "Kirito" viene de su nombre real</h2>
+          <p>Kirito viene de Kirigaya Kazuto. El autor hizo lo mismo con Asuna, abreviando su nombre completo Asuna Yuuki.</p>
+        </article>
+        <article>
+          <h2>El creador de SAO, Akihiko Kayaba, se inspiró en MMOs reales</h2>
+          <p>Kawahara mencionó que Kayaba fue creado pensando en la obsesión de los gamers con la perfección, y se inspiró en juegos como Final Fantasy XI y EverQuest.</p>
+        </article>
+        <article>
+          <h2>La interfaz del juego está inspirada en menús reales</h2>
+          <p>La UI que usan los jugadores dentro de SAO fue diseñada como si fuera un sistema real de VRMMO, con menús contextuales y ventanas flotantes.</p>
+        </article>
+        <article>
+          <h2>Kirito y Asuna se casan en el juego</h2>
+          <p>Durante el arco de Aincrad, Kirito y Asuna se casan dentro del mundo virtual, compran una casa en el campo y adoptan a Yui como su “hija”.</p>
+        </article>
+      </div>
+      <div id="pantalla-dificultad">
           <h2>Elige la dificultad</h2>
           <div>
             <button class="btn-dificultad" data-dificultad="facil">Fácil</button>
@@ -53,40 +104,40 @@
           </div>
         </div>
       </div>
-    </header>
-    <main id="main-juego">
-      <div class="container-main-juego">
-        <section id="container-letras-image">
-          <div id="container-letras">
-            <div id="pregunta"></div>
-            <div id="palabra-correcta"></div>
-            <div id="palabra-incorrecta"></div>
-          </div>
-          <div id="container-image-ahorcado">
-            <img id="image-1" src="/src/img/sao_part_1.jpg" alt="1">
-            <img id="image-2" src="/src/img/sao_part_2.jpg" alt="2">
-            <img id="image-3" src="/src/img/sao_part_3.jpg" alt="3">
-            <img id="image-4" src="/src/img/sao_part_4.jpg" alt="4">
-            <img id="image-5" src="/src/img/sao_part_5.jpg" alt="5">
-            <img id="image-6" src="/src/img/sao_part_6.jpg" alt="6">
-          </div>
-        </section>
-        <section id="container-input-restart">
-          <div id="container-input">
-            <input id="input-letra" type="text" maxlength="1" placeholder="Introduce la palabra" required>
-            <button id="adivina-palabra">Prueba suerte</button>
-            <div id="error-palabra"></div>
-          </div>
-          <div id="container-restart">
-            <div id="message-sao"></div>
-            <button id="restart-button">Reinicio</button>
-          </div>
-        </section>
+      <div id="container-juego">
+          <div class="container-main-juego">
+          <h2 class="title-main-juego">¡EMPECEMOS!</h2>
+          <section id="container-letras-image">
+            <div id="container-letras">
+              <div id="pregunta"></div>
+              <div id="palabra-correcta"></div>
+              <div id="palabra-incorrecta"></div>
+            </div>
+            <div id="container-image-ahorcado">
+              <img id="image-1" src="/src/img/sao_part_1.jpg" alt="1">
+              <img id="image-2" src="/src/img/sao_part_2.jpg" alt="2">
+              <img id="image-3" src="/src/img/sao_part_3.jpg" alt="3">
+              <img id="image-4" src="/src/img/sao_part_4.jpg" alt="4">
+              <img id="image-5" src="/src/img/sao_part_5.jpg" alt="5">
+              <img id="image-6" src="/src/img/sao_part_6.jpg" alt="6">
+            </div>
+          </section>
+          <section id="container-input-restart">
+            <div id="container-input">
+              <input id="input-letra" type="text" maxlength="1" placeholder="Introduce la palabra" required>
+              <button id="adivina-palabra">Prueba suerte</button>
+              <div id="error-palabra"></div>
+            </div>
+            <div id="container-restart">
+              <div id="message-sao"></div>
+              <button id="restart-button">Reinicio</button>
+            </div>
+          </section>
+        </div>
       </div>
     </main>
     <footer class="footer-juego">
       <div class="container-footer-juego">
-        <a href="index.html">Inicio</a>
       </div>
     </footer>
     <!-- AOS JS -->
