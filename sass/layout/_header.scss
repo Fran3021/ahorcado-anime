@@ -3,21 +3,39 @@
 @use '../components/components' as comp;
 
 .header-principal{
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     .container-header-principal{
         padding-top: 50px;
         display: flex;
         flex-direction: column;
         gap: 20px;
+        @include abs.breakpoint(tablet){
+            gap: 30px;
+        }
+        @include abs.breakpoint(desktop){
+            gap: 60px;
+        }
         .title-pagina{
             color: abs.$violeta;
             text-align: center;
             font-size: 35px;
+            @include abs.breakpoint(tablet){
+                font-size: 45px;
+            }
+            @include abs.breakpoint(desktopxl){
+                font-size: 65px;
+            }
         }
         .subtitle-pagina{
             color: abs.$rosa-fuerte;
             font-size: 20px;
             text-align: center;
+            @include abs.breakpoint(tablet){
+                font-size: 25px;
+            }
+            @include abs.breakpoint(desktopxl){
+                font-size: 40px;
+            }
         }
     }
 }
@@ -25,53 +43,99 @@
 
 .header-juego-myhac{
     position: relative;
-    margin-bottom: 200px;
+    margin-bottom: 170px;
+    @include abs.breakpoint(tablet){
+        margin-bottom: 250px;
+    }
+    @include abs.breakpoint(desktop){
+        margin-bottom: 350px;
+    }
     .image-principal{
         position: absolute;
         z-index: -1;
         width: 100%;
         opacity: 0.3;
+        @include abs.breakpoint(tablet){
+            border-radius: 20px;
+            max-width: 700px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @include abs.breakpoint(desktop){
+            max-width: 800px;
+        }
+        @include abs.breakpoint(desktopxl){
+            max-width: 900px;
+        }
     }
     .menu-principal{
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
-        width: 100%;
+        width: 100vw;
         backdrop-filter: blur(10px);
         z-index: 1;
         padding: 10px;
         border-bottom: 1px solid abs.$rosa-neon;
+        @include abs.breakpoint(desktop){
+            padding: 20px;
+        }
         ul{
             width: 90%;
             margin-left: auto;
             margin-right: auto;
             display: flex;
             justify-content: space-between;
+            @include abs.breakpoint(tablet){
+                max-width: 700px;
+            }
+            @include abs.breakpoint(desktop){
+                max-width: 800px;
+            }
+            @include abs.breakpoint(desktopxl){
+                max-width: 900px;
+            }
             a{
                 text-decoration: none;
                 color: abs.$blanco-puro;
+                @include abs.breakpoint(desktop){
+                    font-size: 20px;
+                }
             }
         }
     }
     .container-header-juego{
         padding-top: 50px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        @include abs.breakpoint(tablet){
+            padding-top: 250px;
+        }
+        @include abs.breakpoint(desktop){
+            padding-top: 350px;
+        }
         .title-subtitle-juego{
             display: flex;
             flex-direction: column;
             gap: 10px;
+            @include abs.breakpoint(desktop){
+                gap: 50px;
+            }
             h1{
             font-size: 35px;
             text-align: center;
-            color: abs.$azul-electrico;
+            color: abs.$amarillo;
+            @include abs.breakpoint(tablet){
+                font-size: 45px;
+                }
             }
             p{
                 font-size: 20px;
                 text-align: center;
-                color: abs.$rosa-fuerte;
+                color: abs.$azul-electrico;
+                font-weight: bold;
+                @include abs.breakpoint(tablet){
+                    font-size: 30px;
+                }
             }
         }
     }
@@ -79,73 +143,98 @@
 
 .header-juego-sao{
     position: relative;
-    margin-bottom: 200px;
+    margin-bottom: 170px;
+    @include abs.breakpoint(tablet){
+        margin-bottom: 250px;
+    }
+    @include abs.breakpoint(desktop){
+        margin-bottom: 350px;
+    }
     .image-principal{
         position: absolute;
         z-index: -1;
         width: 100%;
         opacity: 0.3;
+        @include abs.breakpoint(tablet){
+            border-radius: 20px;
+            max-width: 700px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @include abs.breakpoint(desktop){
+            max-width: 800px;
+        }
+        @include abs.breakpoint(desktopxl){
+            max-width: 900px;
+        }
     }
     .menu-principal{
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
-        width: 100%;
+        width: 100vw;
         backdrop-filter: blur(10px);
         z-index: 1;
         padding: 10px;
         border-bottom: 1px solid abs.$rosa-neon;
+        @include abs.breakpoint(desktop){
+            padding: 20px;
+        }
         ul{
             width: 90%;
             margin-left: auto;
             margin-right: auto;
             display: flex;
             justify-content: space-between;
+            @include abs.breakpoint(tablet){
+                max-width: 700px;
+            }
+            @include abs.breakpoint(desktop){
+                max-width: 800px;
+            }
+            @include abs.breakpoint(desktopxl){
+                max-width: 900px;
+            }
             a{
                 text-decoration: none;
                 color: abs.$blanco-puro;
+                @include abs.breakpoint(desktop){
+                    font-size: 20px;
+                }
             }
         }
     }
     .container-header-juego{
         padding-top: 50px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        @include abs.breakpoint(tablet){
+            padding-top: 250px;
+        }
+        @include abs.breakpoint(desktop){
+            padding-top: 350px;
+        }
         .title-subtitle-juego{
             display: flex;
             flex-direction: column;
             gap: 10px;
+            @include abs.breakpoint(desktop){
+                gap: 50px;
+            }
             h1{
             font-size: 35px;
             text-align: center;
-            color: abs.$azul-electrico;
+            color: abs.$rojo;
+            @include abs.breakpoint(tablet){
+                    font-size: 45px;
+                }
             }
             p{
                 font-size: 20px;
                 text-align: center;
-                color: abs.$rosa-fuerte;
-            }
-        }
-        #pantalla-dificultad{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            h2{
-                font-size: 30px;
                 color: abs.$blanco-puro;
-            }
-            div{
-                display: flex;
-                gap: 10px;
-                .btn-dificultad{
-                    border: 0;
-                    background-color: abs.$verde-azulado;
-                    padding: 5px;
-                    border-radius: 5px;
-                    color: abs.$azul-oscuro;
+                font-weight: bold;
+                    @include abs.breakpoint(tablet){
+                    font-size: 30px;
                 }
             }
         }
@@ -154,73 +243,98 @@
 
 .header-juego-kny{
     position: relative;
-    margin-bottom: 200px;
+    margin-bottom: 170px;
+    @include abs.breakpoint(tablet){
+        margin-bottom: 250px;
+    }
+    @include abs.breakpoint(desktop){
+        margin-bottom: 350px;
+    }
     .image-principal{
         position: absolute;
         z-index: -1;
         width: 100%;
         opacity: 0.3;
+        @include abs.breakpoint(tablet){
+            border-radius: 20px;
+            max-width: 700px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @include abs.breakpoint(desktop){
+            max-width: 800px;
+        }
+        @include abs.breakpoint(desktopxl){
+            max-width: 900px;
+        }
     }
     .menu-principal{
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
-        width: 100%;
+        width: 100vw;
         backdrop-filter: blur(10px);
         z-index: 1;
         padding: 10px;
         border-bottom: 1px solid abs.$rosa-neon;
+        @include abs.breakpoint(desktop){
+            padding: 20px;
+        }
         ul{
             width: 90%;
             margin-left: auto;
             margin-right: auto;
             display: flex;
             justify-content: space-between;
+            @include abs.breakpoint(tablet){
+                max-width: 700px;
+            }
+            @include abs.breakpoint(desktop){
+                max-width: 800px;
+            }
+            @include abs.breakpoint(desktopxl){
+                max-width: 900px;
+            }
             a{
                 text-decoration: none;
                 color: abs.$blanco-puro;
+                @include abs.breakpoint(desktop){
+                    font-size: 20px;
+                }
             }
         }
     }
     .container-header-juego{
         padding-top: 50px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        @include abs.breakpoint(tablet){
+            padding-top: 250px;
+        }
+        @include abs.breakpoint(desktop){
+            padding-top: 350px;
+        }
         .title-subtitle-juego{
             display: flex;
             flex-direction: column;
             gap: 10px;
+            @include abs.breakpoint(desktop){
+                gap: 50px;
+            }
             h1{
             font-size: 35px;
             text-align: center;
-            color: abs.$azul-electrico;
+            color: abs.$rojo;
+            @include abs.breakpoint(tablet){
+                    font-size: 45px;
+                }
             }
             p{
                 font-size: 20px;
                 text-align: center;
-                color: abs.$rosa-fuerte;
-            }
-        }
-        #pantalla-dificultad{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            h2{
-                font-size: 30px;
-                color: abs.$blanco-puro;
-            }
-            div{
-                display: flex;
-                gap: 10px;
-                .btn-dificultad{
-                    border: 0;
-                    background-color: abs.$verde-azulado;
-                    padding: 5px;
-                    border-radius: 5px;
-                    color: abs.$azul-oscuro;
+                color: abs.$verde-azulado;
+                font-weight: bold;
+                @include abs.breakpoint(tablet){
+                    font-size: 25px;
                 }
             }
         }

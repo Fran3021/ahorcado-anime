@@ -20,7 +20,7 @@ let mainJuego = document.getElementById('container-juego')
 
 //variables de musica
 let musicaFondo = new Audio ('/src/music/sao/op_sao.mp3')
-musicaFondo.volume = 0.2
+musicaFondo.volume = 0.1
 musicaFondo.loop = true
 
 let correctWord = new Audio ('/src/music/sao/acierto-sao.ogg')
