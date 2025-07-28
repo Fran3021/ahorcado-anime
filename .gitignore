@@ -13,9 +13,7 @@ dist/
 build/
 dist-ssr/
 .cache/
-css/
 .sass-cache/
-*.css.map
 
 # Archivos temporales y de sistema
 .DS_Store
