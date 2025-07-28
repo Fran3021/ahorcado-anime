@@ -518,7 +518,7 @@
     }
     #container-juego{
         display: none;
-            .title-main-juego{
+        .title-main-juego{
             font-size: 30px;
             text-align: center;
             color: abs.$azul-celeste;
@@ -526,6 +526,36 @@
             @include abs.breakpoint(tablet){
                 font-size: 40px;
                 margin-bottom: 50px;
+            }
+        }
+        #barra-tiempo-container{
+            position: relative;
+            width: 80%;
+            height: 60px;
+            margin-left: auto;
+            margin-right: auto;
+            #muñeco{
+                position: absolute;
+                width: 70px;
+                height: 70px;
+                top: -25px;
+                right: -20px;
+                animation: moverArribaAbajo 1s infinite;
+                transition: right 1s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            #barra-tiempo{
+                width: 100%;
+                height: 25px;
+                background-color: abs.$rojo;
+                border: 2px solid abs.$negro;
+                border-radius: 10px;
+                overflow: hidden;
+                #barra-progreso{
+                    height: 100%;
+                    width: 100%;
+                    background-color: abs.$blanco-puro;
+                    transition: width 1s linear;
+                }
             }
         }
         .container-main-juego{

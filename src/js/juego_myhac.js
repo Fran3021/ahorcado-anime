@@ -15,6 +15,32 @@ let image5 = document.getElementById('image-5')
 let image6 = document.getElementById('image-6')
 let errorPalabra = document.getElementById('error-palabra')
 let mainJuego = document.getElementById('container-juego')
+let segundosRestantes;
+let tiempoTotal;
+let intervaloTiempo;
+
+function iniciarBarraProgreso(duracionSegundos) {
+    segundosRestantes = duracionSegundos;
+    tiempoTotal = duracionSegundos;
+    const barra = document.getElementById("barra-progreso");
+    const muñeco = document.getElementById("muñeco");
+
+  intervaloTiempo = setInterval(() => {
+    segundosRestantes--;
+
+    // Calcula el porcentaje restante
+    const porcentaje = (segundosRestantes / tiempoTotal) * 100;
+    barra.style.width = `${porcentaje}%`;
+
+    // Mueve al muñeco a lo largo de la barra
+    const contenedor = document.getElementById("barra-tiempo-container");
+    const anchoContenedor = contenedor.offsetWidth;
+    const nuevaPosX = ((tiempoTotal - segundosRestantes) / tiempoTotal) * anchoContenedor;
+    muñeco.style.right = `${nuevaPosX - muñeco.offsetWidth / 2}px`;
+
+    comprobarDerrota()
+    }, 1000);
+}
 
 
 
@@ -40,77 +66,84 @@ win.volume = 0.3
 win.loop = false
 
 //creamos un array con las preguntas en distintos niveles de dificultad
-let arrayPreguntasFacil = ['¿Qué gas producen los coches que contamina el aire?',
-    '¿Cómo se llama el calentamiento de la Tierra por la contaminación?',
-    '¿Qué podemos plantar para limpiar el aire?',
-    '¿Qué debemos usar menos para ahorrar energía: ¿la bicicleta o el coche?',
-    '¿Qué material reciclamos de las botellas?',
-    '¿Qué gas necesitamos para respirar?',
-    '¿Qué debemos apagar cuando no lo usamos para ahorrar energía?',
-    '¿Cómo se llaman los bloques de hielo que se derriten por el calor?',
-    '¿Qué animal está en peligro por el derretimiento del Ártico?',
-    '¿Qué usamos para cargar nuestros dispositivos?',
+let arrayPreguntasFacil = [
+    "¿Nombre del protagonista?",
+    "¿Nombre de héroe de All Might?",
+    "¿Poder heredado por Deku?",
+    "¿Rival de infancia de Deku?",
+    "¿Escuela de héroes?",
+    "¿Apodo de Todoroki?",
+    "¿Maestro de Deku?",
+    "¿Parte del cuerpo que usa Uraraka?",
+    "¿Sueño de Deku?",
+    "¿Animal de Tsuyu?"
 ]
 
-let arrayPreguntasMedio = ['¿Qué gas de efecto invernadero se produce al quemar carbón o petróleo?',
-    '¿Qué recurso natural necesitamos para producir energía solar?',
-    '¿Qué proceso de las plantas ayuda a limpiar el aire?',
-    '¿Qué tipo de bolsas de plástico debemos usar para cuidar el medio ambiente?',
-    '¿Cómo se llama el fenómeno que ocurre cuando sube el nivel del mar?',
-    '¿Qué podemos reciclar del papel para evitar cortar más árboles?',
-    '¿Qué transporte no contamina y usa pedales?',
-    '¿Qué recurso natural usamos para producir energía eólica?',
-    '¿Qué debemos ahorrar para evitar la sequía?',
-    '¿Qué planeta estamos tratando de proteger con el reciclaje?',
+let arrayPreguntasMedio = [
+    "¿Clase de Midoriya?",
+    "¿Don de Iida?",
+    "¿Nombre real de Dabi?",
+    "¿Don de Yaoyorozu?",
+    "¿Debilidad de Kaminari?",
+    "¿Líder inicial de la Liga?",
+    "¿Don de Bakugo?",
+    "¿Evento deportivo escolar?",
+    "¿Alumno con sombras?",
+    "¿Lado que congela Todoroki?"
 ]
 
-let arrayPreguntasDificil = ['¿Cómo se llama el proceso por el cual la Tierra se calienta debido a ciertos gases?',
-    ' ¿Qué gas producido por las vacas contribuye al calentamiento global?',
-    '¿Qué capa de la atmósfera protege la Tierra de los rayos solares dañinos?',
-    '¿Cómo se llama el fenómeno en el que los glaciares se derriten rápidamente?',
-    '¿Cómo se llama el proceso de conversión de vapor a líquido?',
-    '¿Qué metal reciclamos de las latas para reducir la contaminación?',
-    '¿Partícula subatómica sin carga?',
-    '¿Qué energía renovable usamos con paneles solares?',
-    '¿Qué tipo de combustibles producen más contaminación al quemarse?',
-    '¿Qué acuerdo internacional busca reducir el cambio climático?',
+let arrayPreguntasDificil = [
+    "¿Villano que creó One For All?",
+    "¿Nombre completo de Hawks?",
+    "¿Héroe con voz como arma?",
+    "¿Número de Deku con One For All?",
+    "¿Segundo don de Deku?",
+    "¿Alumno que habla con animales?",
+    "¿Héroe que perdió una pierna?",
+    "¿Villano infiltrado en U.A.?",
+    "¿Mentora de All Might?",
+    "¿Ranking de Endeavor tras All Might?"
 ]
 
 //creamos un array con las respuestas en distintos niveles de dificultad
-let arrayRespuestasFacil = ['dioxidodecarbono',
-    'calentamientoglobal',
-    'arboles',
-    'coche',
-    'plastico',
-    'oxigeno',
-    'luz',
-    'glaciares',
-    'osopolar',
-    'electricidad',
+let arrayRespuestasFacil = [
+    "midoriya",
+    "allmight",
+    "oneforall",
+    "bakugo",
+    "ua",
+    "fuegohielo",
+    "allmight",
+    "dedos",
+    "heroe",
+    "rana"
 ]
 
-let arrayRespuestasMedio = ['dioxidodecarbono',
-    'sol',
-    'fotosintesis',
-    'reutilizables',
-    'inundacion',
-    'carton',
-    'bicicleta',
-    'viento',
-    'agua',
-    'tierra',
+
+let arrayRespuestasMedio = [
+    "1a",
+    "engine",
+    "toya",
+    "creacion",
+    "atontado",
+    "shigaraki",
+    "explosion",
+    "festival",
+    "tokoyami",
+    "derecho"
 ]
 
-let arrayRespuestasDificil = ['efectoinvernadero',
-    'metano',
-    'ozono',
-    'deshielo',
-    'condensacion',
-    'aluminio',
-    'neutron',
-    'solar',
-    'fosiles',
-    'acuerdodeparis',
+let arrayRespuestasDificil = [
+    "allforone",
+    "keigo",
+    "mic",
+    "noveno",
+    "blackwhip",
+    "koda",
+    "aizawa",
+    "kurogiri",
+    "nana",
+    "uno"
 ]
 
 
@@ -120,14 +153,17 @@ function iniciarGame(nivelDificultad){
         preguntaRespuestaFacil()
         comprobarLetra()
         musicaFondo.play()
+        iniciarBarraProgreso(60)
     }else if(nivelDificultad === 'medio'){
         preguntaRespuestaMedio()
         comprobarLetra()
         musicaFondo.play()
+        iniciarBarraProgreso(45)
     }else if(nivelDificultad === 'dificil'){
         preguntaRespuestaDificil()
         comprobarLetra()
         musicaFondo.play()
+        iniciarBarraProgreso(30)
     }
 }
 
@@ -198,7 +234,7 @@ function comprobarLetra(){
 
 function comprobarDerrota(){
     let inputLetra = document.getElementById('input-letra')
-    if(fallos >= maxFallos){
+    if(fallos >= maxFallos || segundosRestantes <= 0){
         messageMyhac.textContent = `Tu voluntad fue fuerte, pero esta vez el mal ganó. ¡No te rindas, joven aprendiz! La respuesta era --> ${respuesta}`.toUpperCase()
         messageMyhac.style.display = 'block'
         buttonAdivina.disabled = true
@@ -208,6 +244,7 @@ function comprobarDerrota(){
         musicaFondo.pause();
         musicaFondo.currentTime = 0;
         gameOver.play()
+        clearInterval(intervaloTiempo);
         buttonRestart.addEventListener('click', () => {
             location.reload()
         })
@@ -226,6 +263,7 @@ function comprobarVictoria(){
         buttonAdivina.style.pointerEvents = 'none'
         buttonRestart.style.display = 'block'
         inputLetra.disabled = true
+        clearInterval(intervaloTiempo);
         buttonRestart.addEventListener('click', () => {
             location.reload()
         })
@@ -258,10 +296,6 @@ function dibujar() {
         image2.style.opacity = '1'
     }
 }
-
-
-
-
 
 
 // Nueva función para mostrar botones y escuchar el click

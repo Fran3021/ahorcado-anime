@@ -15,6 +15,32 @@ let image5 = document.getElementById('image-5')
 let image6 = document.getElementById('image-6')
 let errorPalabra = document.getElementById('error-palabra')
 let mainJuego = document.getElementById('container-juego')
+let segundosRestantes;
+let tiempoTotal;
+let intervaloTiempo;
+
+function iniciarBarraProgreso(duracionSegundos) {
+    segundosRestantes = duracionSegundos;
+    tiempoTotal = duracionSegundos;
+    const barra = document.getElementById("barra-progreso");
+    const muñeco = document.getElementById("muñeco");
+
+  intervaloTiempo = setInterval(() => {
+    segundosRestantes--;
+
+    // Calcula el porcentaje restante
+    const porcentaje = (segundosRestantes / tiempoTotal) * 100;
+    barra.style.width = `${porcentaje}%`;
+
+    // Mueve al muñeco a lo largo de la barra
+    const contenedor = document.getElementById("barra-tiempo-container");
+    const anchoContenedor = contenedor.offsetWidth;
+    const nuevaPosX = ((tiempoTotal - segundosRestantes) / tiempoTotal) * anchoContenedor;
+    muñeco.style.right = `${nuevaPosX - muñeco.offsetWidth / 2}px`;
+
+    comprobarDerrota()
+    }, 1000);
+}
 
 
 
@@ -40,77 +66,83 @@ win.volume = 0.3
 win.loop = false
 
 //creamos un array con las preguntas en distintos niveles de dificultad
-let arrayPreguntasFacil = ['¿Qué gas producen los coches que contamina el aire?',
-    '¿Cómo se llama el calentamiento de la Tierra por la contaminación?',
-    '¿Qué podemos plantar para limpiar el aire?',
-    '¿Qué debemos usar menos para ahorrar energía: ¿la bicicleta o el coche?',
-    '¿Qué material reciclamos de las botellas?',
-    '¿Qué gas necesitamos para respirar?',
-    '¿Qué debemos apagar cuando no lo usamos para ahorrar energía?',
-    '¿Cómo se llaman los bloques de hielo que se derriten por el calor?',
-    '¿Qué animal está en peligro por el derretimiento del Ártico?',
-    '¿Qué usamos para cargar nuestros dispositivos?',
+let arrayPreguntasFacil = [
+    "¿Nombre del protagonista?",
+    "¿Nombre de la protagonista femenina?",
+    "¿Nombre del primer juego?",
+    "¿Color del uniforme de Kirito?",
+    "¿Arma principal de Kirito?",
+    "¿Nombre real de Kirito?",
+    "¿Nombre real de Asuna?",
+    "¿Nombre del hada compañera?",
+    "¿Hermana de Kirito?",
+    "¿Mundo donde vuelan?"
 ]
 
-let arrayPreguntasMedio = ['¿Qué gas de efecto invernadero se produce al quemar carbón o petróleo?',
-    '¿Qué recurso natural necesitamos para producir energía solar?',
-    '¿Qué proceso de las plantas ayuda a limpiar el aire?',
-    '¿Qué tipo de bolsas de plástico debemos usar para cuidar el medio ambiente?',
-    '¿Cómo se llama el fenómeno que ocurre cuando sube el nivel del mar?',
-    '¿Qué podemos reciclar del papel para evitar cortar más árboles?',
-    '¿Qué transporte no contamina y usa pedales?',
-    '¿Qué recurso natural usamos para producir energía eólica?',
-    '¿Qué debemos ahorrar para evitar la sequía?',
-    '¿Qué planeta estamos tratando de proteger con el reciclaje?',
+let arrayPreguntasMedio = [
+    "¿Nombre completo de Kirito?",
+    "¿Nombre del gremio de Asuna?",
+    "¿Nombre del segundo juego?",
+    "¿Apodo de Kirito en ALO?",
+    "¿Tipo de arma en GGO?",
+    "¿Nombre del juego con pistolas?",
+    "¿Nombre de Death Gun?",
+    "¿Nombre real de Sinon?",
+    "¿Nombre del creador de SAO?",
+    "¿Hermana de Asuna?"
 ]
 
-let arrayPreguntasDificil = ['¿Cómo se llama el proceso por el cual la Tierra se calienta debido a ciertos gases?',
-    ' ¿Qué gas producido por las vacas contribuye al calentamiento global?',
-    '¿Qué capa de la atmósfera protege la Tierra de los rayos solares dañinos?',
-    '¿Cómo se llama el fenómeno en el que los glaciares se derriten rápidamente?',
-    '¿Cómo se llama el proceso de conversión de vapor a líquido?',
-    '¿Qué metal reciclamos de las latas para reducir la contaminación?',
-    '¿Partícula subatómica sin carga?',
-    '¿Qué energía renovable usamos con paneles solares?',
-    '¿Qué tipo de combustibles producen más contaminación al quemarse?',
-    '¿Qué acuerdo internacional busca reducir el cambio climático?',
+let arrayPreguntasDificil = [
+    "¿Apellido de Kirito?",
+    "¿Nombre del amigo de Kirito que conoce al principio?",
+    "¿Nombre del primer jefe de piso?",
+    "¿Nombre del gremio oscuro de GGO?",
+    "¿Nombre de la IA médica de Alicization?",
+    "¿Apellido de Alice?",
+    "¿Nombre del sistema de almas?",
+    "¿Villano principal de Alicization?",
+    "¿Organización enemiga de Underworld?",
+    "¿Nombre completo de Eugeo?"
 ]
 
 //creamos un array con las respuestas en distintos niveles de dificultad
-let arrayRespuestasFacil = ['dioxidodecarbono',
-    'calentamientoglobal',
-    'arboles',
-    'coche',
-    'plastico',
-    'oxigeno',
-    'luz',
-    'glaciares',
-    'osopolar',
-    'electricidad',
+let arrayRespuestasFacil = [
+    "kirito",
+    "asuna",
+    "sao",
+    "negro",
+    "espada",
+    "kazuto",
+    "asuna",
+    "yui",
+    "suguha",
+    "alfheim"
 ]
 
-let arrayRespuestasMedio = ['dioxidodecarbono',
-    'sol',
-    'fotosintesis',
-    'reutilizables',
-    'inundacion',
-    'carton',
-    'bicicleta',
-    'viento',
-    'agua',
-    'tierra',
+let arrayRespuestasMedio = [
+    "kazuto",
+    "caballeroshermandadsangre",
+    "alo",
+    "espadachinnegro",
+    "rifle",
+    "ggo",
+    "shouichi",
+    "shino",
+    "kayaba",
+    "kyouko"
 ]
 
-let arrayRespuestasDificil = ['efectoinvernadero',
-    'metano',
-    'ozono',
-    'deshielo',
-    'condensacion',
-    'aluminio',
-    'neutron',
-    'solar',
-    'fosiles',
-    'acuerdodeparis',
+let arrayRespuestasDificil = [
+    "kirigaya",
+    "klein",
+    "illfang",
+    "laughing",
+    "cardinal",
+    "zuberg",
+    "fluctlight",
+    "gabriel",
+    "darkterritory",
+    "eugeo"
 ]
 
 
@@ -120,14 +152,17 @@ function iniciarGame(nivelDificultad){
         preguntaRespuestaFacil()
         comprobarLetra()
         musicaFondo.play()
+        iniciarBarraProgreso(60)
     }else if(nivelDificultad === 'medio'){
         preguntaRespuestaMedio()
         comprobarLetra()
         musicaFondo.play()
+        iniciarBarraProgreso(45)
     }else if(nivelDificultad === 'dificil'){
         preguntaRespuestaDificil()
         comprobarLetra()
         musicaFondo.play()
+        iniciarBarraProgreso(30)
     }
 }
 
@@ -198,7 +233,7 @@ function comprobarLetra(){
 
 function comprobarDerrota(){
     let inputLetra = document.getElementById('input-letra')
-    if(fallos >= maxFallos){
+    if(fallos >= maxFallos || segundosRestantes <= 0){
         messageSao.textContent = `HP a cero… has perdido esta batalla. Pero siempre puedes volver a conectar. La respuesta era --> ${respuesta}`.toUpperCase()
         messageSao.style.display = 'block'
         buttonAdivina.disabled = true
@@ -208,6 +243,7 @@ function comprobarDerrota(){
         musicaFondo.pause();
         musicaFondo.currentTime = 0;
         gameOver.play()
+        clearInterval(intervaloTiempo)
         buttonRestart.addEventListener('click', () => {
             location.reload()
         })
@@ -226,6 +262,7 @@ function comprobarVictoria(){
         buttonAdivina.style.pointerEvents = 'none'
         buttonRestart.style.display = 'block'
         inputLetra.disabled = true
+        clearInterval(intervaloTiempo)
         buttonRestart.addEventListener('click', () => {
             location.reload()
         })
