@@ -3,9 +3,38 @@
 @use '../components/components' as comp;
 
 .header-principal{
-    margin-bottom: 100px;
+    position: relative;
+    margin-bottom: 50px;
+    background-image:
+    linear-gradient(120deg, rgba(40,0,80,0.7) 0%, rgba(0,180,255,0.5) 100%),
+    url('/src/img/image-header-scarlet.jpg');
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    &::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+            120deg,
+            rgba(255,255,255,0.15) 0%,
+            rgba(255,255,255,0.35) 50%,
+            rgba(255,255,255,0.15) 100%
+        );
+        transform: rotate(10deg);
+        animation: animeShine 4s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+    }
     .container-header-principal{
+        position: relative;
+        z-index: 1;
         padding-top: 50px;
+        padding-bottom: 50px;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -16,25 +45,25 @@
             gap: 60px;
         }
         .title-pagina{
-            color: abs.$violeta;
+            color: abs.$negro;
             text-align: center;
             font-size: 35px;
             @include abs.breakpoint(tablet){
                 font-size: 45px;
             }
             @include abs.breakpoint(desktopxl){
-                font-size: 65px;
+                font-size: 55px;
             }
         }
         .subtitle-pagina{
-            color: abs.$rosa-fuerte;
+            color: abs.$blanco-puro;
             font-size: 20px;
             text-align: center;
             @include abs.breakpoint(tablet){
                 font-size: 25px;
             }
             @include abs.breakpoint(desktopxl){
-                font-size: 40px;
+                font-size: 35px;
             }
         }
     }
@@ -332,6 +361,106 @@
                 font-size: 20px;
                 text-align: center;
                 color: abs.$verde-azulado;
+                font-weight: bold;
+                @include abs.breakpoint(tablet){
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+
+.header-juego-solo-leveling{
+    position: relative;
+    margin-bottom: 170px;
+    @include abs.breakpoint(tablet){
+        margin-bottom: 250px;
+    }
+    @include abs.breakpoint(desktop){
+        margin-bottom: 350px;
+    }
+    .image-principal{
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        opacity: 0.3;
+        @include abs.breakpoint(tablet){
+            border-radius: 20px;
+            max-width: 700px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @include abs.breakpoint(desktop){
+            max-width: 800px;
+        }
+        @include abs.breakpoint(desktopxl){
+            max-width: 900px;
+        }
+    }
+    .menu-principal{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100vw;
+        backdrop-filter: blur(10px);
+        z-index: 1;
+        padding: 10px;
+        border-bottom: 1px solid abs.$rosa-neon;
+        @include abs.breakpoint(desktop){
+            padding: 20px;
+        }
+        ul{
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: space-between;
+            @include abs.breakpoint(tablet){
+                max-width: 700px;
+            }
+            @include abs.breakpoint(desktop){
+                max-width: 800px;
+            }
+            @include abs.breakpoint(desktopxl){
+                max-width: 900px;
+            }
+            a{
+                text-decoration: none;
+                color: abs.$blanco-puro;
+                @include abs.breakpoint(desktop){
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .container-header-juego{
+        padding-top: 50px;
+        @include abs.breakpoint(tablet){
+            padding-top: 250px;
+        }
+        @include abs.breakpoint(desktop){
+            padding-top: 350px;
+        }
+        .title-subtitle-juego{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            @include abs.breakpoint(desktop){
+                gap: 50px;
+            }
+            h1{
+            font-size: 35px;
+            text-align: center;
+            color: abs.$blanco-puro;
+            @include abs.breakpoint(tablet){
+                    font-size: 45px;
+                }
+            }
+            p{
+                font-size: 20px;
+                text-align: center;
+                color: abs.$azul-celeste;
                 font-weight: bold;
                 @include abs.breakpoint(tablet){
                     font-size: 25px;
