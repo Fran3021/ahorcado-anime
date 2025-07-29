@@ -130,7 +130,7 @@ let arrayRespuestasMedio = [
     "sung",
     "hunters",
     "scavenger",
-    "seúl"
+    "seul"
 ]
 
 let arrayRespuestasDificil = [
