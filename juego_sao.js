@@ -47,23 +47,23 @@ function iniciarBarraProgreso(duracionSegundos) {
 
 
 //variables de musica
-let musicaFondo = new Audio ('/music/sao/op_sao.mp3')
+let musicaFondo = new Audio ('music/sao/op_sao.mp3')
 musicaFondo.volume = 0.1
 musicaFondo.loop = true
 
-let correctWord = new Audio ('/music/sao/acierto-sao.ogg')
+let correctWord = new Audio ('music/sao/acierto-sao.ogg')
 correctWord.volume = 1.0
 correctWord.loop = false
 
-let wrongWord = new Audio ('/music/sao/error.mov')
+let wrongWord = new Audio ('music/sao/error.mov')
 wrongWord.volume = 0.4
 wrongWord.loop = false
 
-let gameOver = new Audio ('/music/sao/game-over.mp3')
+let gameOver = new Audio ('music/sao/game-over.mp3')
 gameOver.volume = 0.7
 gameOver.loop = false
 
-let win = new Audio ('/music/sao/win.mov')
+let win = new Audio ('music/sao/win.mov')
 win.volume = 0.3
 win.loop = false
 
