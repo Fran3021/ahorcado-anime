@@ -54,10 +54,10 @@ Este proyecto es un **juego del ahorcado** ambientado en el mundo del anime, des
 ## Organización del código
 
 - `/index.html` y variantes: Plantillas HTML para cada modo o anime.
-- `/src/js/`: Lógica principal del juego, gestión de eventos, temporizadores y audio.
+- `/public/js/`: Lógica principal del juego, gestión de eventos, temporizadores y audio.
 - `/sass/`: Estructura modular de estilos con SCSS.
-- `/src/img/`: Imágenes de personajes, fondos y elementos visuales.
-- `/src/music/`: Audios de fondo y efectos.
+- `/public/img/`: Imágenes de personajes, fondos y elementos visuales.
+- `/public/music/`: Audios de fondo y efectos.
 
 ---
 
