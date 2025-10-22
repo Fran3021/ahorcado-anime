@@ -1,0 +1,87 @@
+<!--Obligatorio para que el navegador lo lea perfecto en lenguaje HTML-->
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!--Aqui el titulo para los buscadores-->
+  <title>Juego Ahorcado Anime</title>
+  
+  <!--Descripcion que sale al buscarlo en el navegador-->
+  <meta name="description" content="juego_anime">
+
+  <!--Palabras claves para los buscadores en navegadores-->
+  <meta name="keywords" content="anime, juego ahorcado, game, dev">
+
+  <!--Autor de la pagina-->
+  <meta name="autor" content="Fran">
+
+  <!--Añadimos la hoja de estilo CSS o SASS-->
+
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+  <!--Favicon de la pagina(icono)-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/ahorcado-anime/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ahorcado-anime/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ahorcado-anime/icons/favicon-16x16.png">
+
+  <!--Codificacion-->
+  <meta charset="UTF-8">
+
+  <!--Para que la web sea resposinve(El tamaño segun el dispositivo)-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Para algunos navegadores moviles(Color parte de arriba del HEADER)-->
+  <meta name="theme-color" content="FF0000">
+
+  <script type="module" crossorigin src="/ahorcado-anime/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+
+  <body>
+    <header class="header-principal">
+      <div class="container-header-principal" data-aos="zoom-in" data-aos-delay="500">
+        <h1 class="title-pagina">¡Bienvenid@ a AhorcaAnime!</h1>
+        <p class="subtitle-pagina" >¿Podrás adivinar todas las palabras antes de que sea demasiado tarde?</p>
+      </div>
+    </header>
+    <main id="main-principal">
+      <h2 class="title-main-principal">Animes</h2>
+      <div class="container-main-principal">
+        <div class="juego-myhac" data-aos="fade-left" data-aos-delay="500" >
+          <p class="frase-anime" >¡Demuestra que puedes convertirte en un verdadero héroe!</p>
+          <a class="enlace-juego" href="juego_myhac.html">¡Jugar!</a>
+        </div>
+
+        <div class="juego-sao" data-aos="fade-right" data-aos-delay="500" >
+          <p class="frase-anime" >¡Logra sobrevivir en SAO adivinando las palabras correctas!</p>
+          <a class="enlace-juego" href="juego_sao.html">¡Entrar al juego!</a>
+        </div>
+
+        <div class="juego-kny" data-aos="fade-left" data-aos-delay="500" >
+          <p class="frase-anime" >¡Adivina las palabras antes de que sea demasiado tarde para los cazadores!</p>
+          <a class="enlace-juego" href="juego_kny.html">¡Comenzar!</a>
+        </div>
+
+        <div class="juego-solo-leveling" data-aos="fade-right" data-aos-delay="500" >
+          <p class="frase-anime" >¡Un paso en falso y las sombras te consumirán! Demuestra que mereces convertirte en el monarca más fuerte.</p>
+          <a class="enlace-juego" href="juego_solo_leveling.html">¡Entrar a la mazmorra!</a>
+        </div>
+
+        <div class="juego-tokyo-ghoul" data-aos="fade-left" data-aos-delay="500" >
+          <p class="frase-anime" >¡Un solo error puede revelarte como un ghoul! Adivina o desaparece en la oscuridad de Kaneki.</p>
+          <a class="enlace-juego" href="juego_tokyo_ghoul.html">¡Adivina o sé devorado!</a>
+        </div>
+    </main>
+    <footer class="footer-principal">
+      <div class="container-footer-principal">
+        <p>Copyright © 2025 Fran García Dev. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

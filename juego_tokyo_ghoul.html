@@ -1,0 +1,160 @@
+<!--Obligatorio para que el navegador lo lea perfecto en lenguaje HTML-->
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!--Aqui el titulo para los buscadores-->
+  <title>Juego Ahorcado Anime</title>
+  
+  <!--Descripcion que sale al buscarlo en el navegador-->
+  <meta name="description" content="juego_anime">
+
+  <!--Palabras claves para los buscadores en navegadores-->
+  <meta name="keywords" content="anime, juego ahorcado, game, dev">
+
+  <!--Autor de la pagina-->
+  <meta name="autor" content="Fran">
+
+  <!--Añadimos la hoja de estilo CSS o SASS-->
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!--Favicon de la pagina(icono)-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/ahorcado-anime/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ahorcado-anime/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ahorcado-anime/icons/favicon-16x16.png">
+
+
+  <!--Codificacion-->
+  <meta charset="UTF-8">
+
+  <!--Para que la web sea resposinve(El tamaño segun el dispositivo)-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Para algunos navegadores moviles(Color parte de arriba del HEADER)-->
+  <meta name="theme-color" content="FF0000">
+
+  <script type="module" crossorigin src="/ahorcado-anime/assets/juego_tokyo_ghoul-BtE-UGEn.js"></script>
+  <link rel="modulepreload" crossorigin href="/ahorcado-anime/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="stylesheet" crossorigin href="/ahorcado-anime/assets/style-BM0TFpvd.css">
+
+  <body>
+    <header class="header-juego-tokyo-ghoul">
+      <img class="image-principal" src="/ahorcado-anime/img/imagen-principal-tokyo-ghoul.png" alt="">
+      <nav class="menu-principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#pantalla-dificultad">Jugar</a></li>
+          <li><a href="#informacion-anime">Anime</a></li>
+        </ul>
+      </nav>
+      <div class="container-header-juego">
+        <div class="title-subtitle-juego">
+          <h1>Tokyo Ghoul: ¿Humano o Monstruo?</h1>
+          <p>Las palabras pueden salvarte… o condenarte. Adivina rápido, o serás devorado por tu monstruo interior.</p>
+        </div>
+      </div>
+    </header>
+    <main id="main-juego">
+      <div class="container-curiosidades-tokyo-ghoul" id="informacion-anime">
+        <h2 class="title-curiosidades" >Curiosidades del anime</h2>
+        <article data-aos="fade-left" data-aos-delay="500">
+          <h2>El manga fue censurado en varios países</h2>
+          <p>Debido a su alto contenido violento y psicológico, fue retirado o censurado en lugares como China y Rusia.</p>
+        </article>
+        <article data-aos="fade-right" data-aos-delay="500">
+          <h2>El autor, Sui Ishida, sigue siendo un misterio</h2>
+          <p>Hasta hoy, no se conoce el rostro real de Sui Ishida, ni su verdadera identidad. Todo se mantiene en secreto.</p>
+        </article>
+        <article data-aos="fade-left" data-aos-delay="500">
+          <h2>Kaneki se inspiró en el Jekyll y Hyde moderno</h2>
+          <p>La transformación de Kaneki fue inspirada por Dr. Jekyll y Mr. Hyde, representando su lucha entre humanidad y monstruo.</p>
+        </article>
+        <article data-aos="fade-right" data-aos-delay="500">
+          <h2>La máscara de Kaneki fue diseñada por un artista fetichista</h2>
+          <p>La icónica máscara fue diseñada por un creador japonés real de artículos de cuero fetichista, Zanio.</p>
+        </article>
+        <article data-aos="fade-left" data-aos-delay="500">
+          <h2>Cada ghoul tiene un kagune único</h2>
+          <p>Los kagune están basados en el tipo de ghoul (ukaku, rinkaku, koukaku, bikaku), y reflejan parte de su personalidad.</p>
+        </article>
+        <article data-aos="fade-right" data-aos-delay="500">
+          <h2>La canción "Unravel" se volvió un fenómeno mundial</h2>
+          <p>El opening de la primera temporada, interpretado por TK from Ling Tosite Sigure, se convirtió en uno de los más populares del anime en la década de 2010.</p>
+        </article>
+        <article data-aos="fade-left" data-aos-delay="500">
+          <h2>El número 7 es importante para Kaneki</h2>
+          <p>Kaneki es torturado durante 7 días por Yamori (Jason), lo que simboliza su “renacimiento” como ghoul completo.</p>
+        </article>
+        <article data-aos="fade-right" data-aos-delay="500">
+          <h2>Kaneki originalmente iba a morir</h2>
+          <p>En borradores iniciales, el autor pensó en matar a Kaneki temprano para que el protagonista cambiara, pero decidió explorar su transformación más a fondo.</p>
+        </article>
+        <article data-aos="fade-left" data-aos-delay="500">
+          <h2>La historia es una crítica social encubierta</h2>
+          <p>Tokyo Ghoul toca temas como la discriminación, el hambre, el trauma psicológico, y la deshumanización en la sociedad moderna.</p>
+        </article>
+        <article data-aos="fade-right" data-aos-delay="500">
+          <h2>Touka tenía otro diseño original más siniestro</h2>
+          <p>En los primeros bocetos, Touka era más violenta y su personalidad era más salvaje, pero el autor la suavizó para mostrar su lado humano.</p>
+        </article>
+      </div>
+      <div id="pantalla-dificultad" data-aos="zoom-in" data-aos-delay="500">
+        <h2>Elige la dificultad</h2>
+          <div>
+            <button class="btn-dificultad" data-dificultad="facil">Fácil</button>
+            <button class="btn-dificultad" data-dificultad="medio">Medio</button>
+            <button class="btn-dificultad" data-dificultad="dificil">Difícil</button>
+          </div>
+      </div>
+      <div id="container-juego">
+        <h2 class="title-main-juego">¡EMPECEMOS!</h2>
+        <div id="barra-tiempo-container">
+          <img src="/ahorcado-anime/icons/contador-kaneki.png" alt="muñeco-deku" id="muñeco" />
+          <div id="barra-tiempo">
+            <div id="barra-progreso"></div>
+          </div>
+        </div>
+        <div class="container-main-juego">
+          <section id="container-letras-image">
+            <div id="container-letras">
+              <div id="pregunta"></div>
+              <div id="palabra-correcta"></div>
+              <div id="palabra-incorrecta"></div>
+            </div>
+            <div id="container-image-ahorcado">
+              <img id="image-1" src="/ahorcado-anime/img/tokyo_ghoul_part_1.jpg" alt="1">
+              <img id="image-2" src="/ahorcado-anime/img/tokyo_ghoul_part_2.jpg" alt="2">
+              <img id="image-3" src="/ahorcado-anime/img/tokyo_ghoul_part_3.jpg" alt="3">
+              <img id="image-4" src="/ahorcado-anime/img/tokyo_ghoul_part_4.jpg" alt="4">
+              <img id="image-5" src="/ahorcado-anime/img/tokyo_ghoul_part_5.jpg" alt="5">
+              <img id="image-6" src="/ahorcado-anime/img/tokyo_ghoul_part_6.jpg" alt="6">
+            </div>
+          </section>
+          <section id="container-input-restart-tokyo-ghoul">
+            <div id="container-input">
+              <input id="input-letra" type="text" maxlength="1" placeholder="Letra" required>
+              <button id="adivina-palabra">Prueba suerte</button>
+              <div id="error-palabra"></div>
+            </div>
+            <div id="container-restart">
+              <div id="message-tokyo-ghoul"></div>
+              <button id="restart-button">Reinicio</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="footer-juego">
+      <div class="container-footer-juego">
+        <p>Copyright © 2025 Fran García Dev. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

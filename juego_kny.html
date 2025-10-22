@@ -1,0 +1,160 @@
+<!--Obligatorio para que el navegador lo lea perfecto en lenguaje HTML-->
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!--Aqui el titulo para los buscadores-->
+  <title>Juego Ahorcado Anime</title>
+  
+  <!--Descripcion que sale al buscarlo en el navegador-->
+  <meta name="description" content="juego_anime">
+
+  <!--Palabras claves para los buscadores en navegadores-->
+  <meta name="keywords" content="anime, juego ahorcado, game, dev">
+
+  <!--Autor de la pagina-->
+  <meta name="autor" content="Fran">
+
+  <!--Añadimos la hoja de estilo CSS o SASS-->
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!--Favicon de la pagina(icono)-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/ahorcado-anime/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ahorcado-anime/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ahorcado-anime/icons/favicon-16x16.png">
+
+
+  <!--Codificacion-->
+  <meta charset="UTF-8">
+
+  <!--Para que la web sea resposinve(El tamaño segun el dispositivo)-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Para algunos navegadores moviles(Color parte de arriba del HEADER)-->
+  <meta name="theme-color" content="FF0000">
+
+  <script type="module" crossorigin src="/ahorcado-anime/assets/juego_kny-AosC8X_4.js"></script>
+  <link rel="modulepreload" crossorigin href="/ahorcado-anime/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="stylesheet" crossorigin href="/ahorcado-anime/assets/style-BM0TFpvd.css">
+
+  <body>
+    <header class="header-juego-kny">
+      <img class="image-principal" src="/ahorcado-anime/img/imagen-principal-kny.jpg" alt="">
+      <nav class="menu-principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#pantalla-dificultad">Jugar</a></li>
+          <li><a href="#informacion-anime">Anime</a></li>
+        </ul>
+      </nav>
+      <div class="container-header-juego">
+        <div class="title-subtitle-juego">
+          <h1>¡Bienvenido, cazador de demonios!</h1>
+          <p>El aliento de tu espada depende de cada letra… ¿podrás acabar con el demonio a tiempo?</p>
+        </div>
+      </div>
+    </header>
+    <main id="main-juego">
+      <div class="container-curiosidades-kny" id="informacion-anime">
+        <h2 class="title-curiosidades" >Curiosidades del anime</h2>
+        <article data-aos="fade-left" data-aos-delay="500">
+          <h2>El patrón del haori de Tanjiro es tradicional japonés</h2>
+          <p>El diseño de cuadros verdes y negros que usa Tanjiro se llama "ichimatsu" y es muy antiguo. Simboliza continuidad y prosperidad.</p>
+        </article>
+        <article data-aos="fade-right" data-aos-delay="500">
+          <h2>Nezuko es la única demonio que no necesita comer humanos</h2>
+          <p>A diferencia de otros demonios, Nezuko duerme para recuperar su energía, lo que la hace única y especial en el mundo demoníaco.</p>
+        </article>
+        <article data-aos="fade-left" data-aos-delay="500">
+          <h2>Tanjiro tiene un sentido del olfato sobrehumano</h2>
+          <p>Puede literalmente oler las emociones y los "puntos débiles" de sus enemigos, lo cual es clave para su estilo de combate.</p>
+        </article>
+        <article data-aos="fade-right" data-aos-delay="500">
+          <h2>Muzan está basado en Michael Jackson</h2>
+          <p>El autor confirmó que el aspecto elegante y sombrío de Muzan fue inspirado en el Rey del Pop, especialmente su look en Smooth Criminal.</p>
+        </article>
+        <article data-aos="fade-left" data-aos-delay="500">
+          <h2>Cada Luna Superior lleva tatuajes o marcas especiales</h2>
+          <p>Los demonios más poderosos de Muzan, las Lunas Superiores, tienen números y patrones únicos que aparecen en sus ojos.</p>
+        </article>
+        <article data-aos="fade-right" data-aos-delay="500">
+          <h2>Las técnicas de respiración no generan agua ni fuego real</h2>
+          <p>Aunque vemos ataques espectaculares en pantalla, todo es visualización artística del estilo. En el universo del anime, son solo espadazos muy rápidos y precisos.</p>
+        </article>
+        <article data-aos="fade-left" data-aos-delay="500">
+          <h2>El apellido “Kamado” significa “horno”</h2>
+          <p>Una referencia a la vida de Tanjiro como vendedor de carbón. También tiene un simbolismo de fuego y renovación.</p>
+        </article>
+        <article data-aos="fade-right" data-aos-delay="500">
+          <h2>Zenitsu solo pelea bien si está inconsciente</h2>
+          <p>Su técnica del Rayo solo se ejecuta cuando Zenitsu está dormido o desmayado, porque su miedo desaparece y se mueve por reflejo.</p>
+        </article>
+        <article data-aos="fade-left" data-aos-delay="500">
+          <h2>El autor de Kimetsu no Yaiba es muy reservado</h2>
+          <p>Koyoharu Gotouge es un seudónimo, y no se sabe con certeza si es hombre o mujer. Casi no ha aparecido públicamente.</p>
+        </article>
+        <article data-aos="fade-right" data-aos-delay="500">
+          <h2>Es uno de los mangas más vendidos de la historia</h2>
+          <p>En 2020, Kimetsu no Yaiba superó a One Piece en ventas anuales por primera vez en más de 10 años. ¡Un fenómeno mundial!</p>
+        </article>
+      </div>
+        <div id="pantalla-dificultad" data-aos="zoom-in" data-aos-delay="500">
+          <h2>Elige la dificultad</h2>
+          <div>
+            <button class="btn-dificultad" data-dificultad="facil">Fácil</button>
+            <button class="btn-dificultad" data-dificultad="medio">Medio</button>
+            <button class="btn-dificultad" data-dificultad="dificil">Difícil</button>
+          </div>
+        </div>
+        <div id="container-juego">
+          <h2 class="title-main-juego">¡EMPECEMOS!</h2>
+            <div id="barra-tiempo-container">
+              <img src="/ahorcado-anime/icons/contador-tanjiro.png" alt="muñeco-deku" id="muñeco" />
+              <div id="barra-tiempo">
+                <div id="barra-progreso"></div>
+              </div>
+            </div>
+            <div class="container-main-juego">
+            <section id="container-letras-image">
+              <div id="container-letras">
+                <div id="pregunta"></div>
+                <div id="palabra-correcta"></div>
+                <div id="palabra-incorrecta"></div>
+              </div>
+              <div id="container-image-ahorcado">
+                <img id="image-1" src="/ahorcado-anime/img/kny2_part_1.jpg" alt="1">
+                <img id="image-2" src="/ahorcado-anime/img/kny2_part_2.jpg" alt="2">
+                <img id="image-3" src="/ahorcado-anime/img/kny2_part_3.jpg" alt="3">
+                <img id="image-4" src="/ahorcado-anime/img/kny2_part_4.jpg" alt="4">
+                <img id="image-5" src="/ahorcado-anime/img/kny2_part_5.jpg" alt="5">
+                <img id="image-6" src="/ahorcado-anime/img/kny2_part_6.jpg" alt="6">
+              </div>
+            </section>
+            <section id="container-input-restart-kny">
+              <div id="container-input">
+                <input id="input-letra" type="text" maxlength="1" placeholder="Letra" required>
+                <button id="adivina-palabra">Prueba suerte</button>
+                <div id="error-palabra"></div>
+              </div>
+              <div id="container-restart">
+                <div id="message-kny"></div>
+                <button id="restart-button">Reinicio</button>
+              </div>
+            </section>
+          </div>
+        </div>
+    </main>
+    <footer class="footer-juego">
+      <div class="container-footer-juego">
+        <p>Copyright © 2025 Fran García Dev. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
