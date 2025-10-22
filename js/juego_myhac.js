@@ -1,3 +1,5 @@
+import './sass/style.scss'
+
 //seleccionamos los elementos necesarios del html
 let title = document.querySelector('h1')
 let main = document.getElementById('main-principal')
@@ -5,7 +7,7 @@ let preguntas = document.getElementById('pregunta')
 let palabrasCorrectas = document.getElementById('palabra-correcta')
 let palabrasIncorrectas = document.getElementById('palabra-incorrecta')
 let buttonAdivina = document.getElementById('adivina-palabra')
-let messageKny = document.getElementById('message-kny')
+let messageMyhac = document.getElementById('message-myhac')
 let buttonRestart = document.getElementById('restart-button')
 let image1 = document.getElementById('image-1')
 let image2 = document.getElementById('image-2')
@@ -19,14 +21,13 @@ let segundosRestantes;
 let tiempoTotal;
 let intervaloTiempo;
 
-
 function iniciarBarraProgreso(duracionSegundos) {
     segundosRestantes = duracionSegundos;
     tiempoTotal = duracionSegundos;
     const barra = document.getElementById("barra-progreso");
     const muñeco = document.getElementById("muñeco");
 
-    intervaloTiempo = setInterval(() => {
+  intervaloTiempo = setInterval(() => {
     segundosRestantes--;
 
     // Calcula el porcentaje restante
@@ -46,104 +47,105 @@ function iniciarBarraProgreso(duracionSegundos) {
 
 
 //variables de musica
-let musicaFondo = new Audio ('/src/music/kny/op_kny.mp3')
+let musicaFondo = new Audio ('/music/myhac/op_myhac.mp3')
 musicaFondo.volume = 0.1
 musicaFondo.loop = true
 
-let correctWord = new Audio ('/src/music/kny/acierto-kny.ogg')
-correctWord.volume = 1.0
+let correctWord = new Audio ('/music/myhac/acierto-myhac.mp3.flac')
+correctWord.volume = 0.7
 correctWord.loop = false
 
-let wrongWord = new Audio ('/src/music/kny/error.mov')
+let wrongWord = new Audio ('/music/myhac/error.mov')
 wrongWord.volume = 0.4
 wrongWord.loop = false
 
-let gameOver = new Audio ('/src/music/kny/game-over.mp3')
+let gameOver = new Audio ('/music/myhac/game-over.mp3')
 gameOver.volume = 0.7
 gameOver.loop = false
 
-let win = new Audio ('/src/music/kny/win.mov')
+let win = new Audio ('/music/myhac/win.mov')
 win.volume = 0.3
 win.loop = false
 
 //creamos un array con las preguntas en distintos niveles de dificultad
 let arrayPreguntasFacil = [
     "¿Nombre del protagonista?",
-    "¿Nombre de la hermana de Tanjiro?",
-    "¿Qué es Nezuko?",
-    "¿Color del pelo de Tanjiro?",
-    "¿Arma principal de los cazadores?",
-    "¿Quién lleva una caja a la espalda?",
-    "¿Animal asociado con Inosuke?",
-    "¿Color del uniforme del Cuerpo?",
-    "¿Nombre del rubio cobarde?",
-    "¿Nombre del pilar de fuego?"
+    "¿Nombre de héroe de All Might?",
+    "¿Poder heredado por Deku?",
+    "¿Rival de infancia de Deku?",
+    "¿Escuela de héroes?",
+    "¿Apodo de Todoroki?",
+    "¿Maestro de Deku?",
+    "¿Parte del cuerpo que usa Uraraka?",
+    "¿Sueño de Deku?",
+    "¿Animal de Tsuyu?"
 ]
 
 let arrayPreguntasMedio = [
-    "¿Apellido de Tanjiro?",
-    "¿Nombre del pilar del agua?",
-    "¿Nombre del pilar del sonido?",
-    "¿Técnica de respiración de Zenitsu?",
-    "¿Quién entrena a Tanjiro?",
-    "¿Nombre del patrón?",
-    "¿Nombre del demonio principal?",
-    "¿Quién lleva dos espadas?",
-    "¿Nombre del pilar del amor?",
-    "¿Nombre del pilar de la niebla?"
+    "¿Clase de Midoriya?",
+    "¿Don de Iida?",
+    "¿Nombre real de Dabi?",
+    "¿Don de Yaoyorozu?",
+    "¿Debilidad de Kaminari?",
+    "¿Líder inicial de la Liga?",
+    "¿Don de Bakugo?",
+    "¿Evento deportivo escolar?",
+    "¿Alumno con sombras?",
+    "¿Lado que congela Todoroki?"
 ]
 
 let arrayPreguntasDificil = [
-    "¿Apellido de Nezuko?",
-    "¿Apellido de Giyu?",
-    "¿Nombre del primer demonio?",
-    "¿Nombre del hermano de Muichiro?",
-    "¿Pilar que muere contra Akaza?",
-    "¿Forma final de Tanjiro (modo)?",
-    "¿Nivel más alto de los demonios?",
-    "¿Nombre de la luna superior uno?",
-    "¿Nombre real de Muzan?",
-    "¿Nombre del demonio araña?"
+    "¿Villano que creó One For All?",
+    "¿Nombre completo de Hawks?",
+    "¿Héroe con voz como arma?",
+    "¿Número de Deku con One For All?",
+    "¿Segundo don de Deku?",
+    "¿Alumno que habla con animales?",
+    "¿Héroe que perdió una pierna?",
+    "¿Villano infiltrado en U.A.?",
+    "¿Mentora de All Might?",
+    "¿Ranking de Endeavor tras All Might?"
 ]
 
 //creamos un array con las respuestas en distintos niveles de dificultad
 let arrayRespuestasFacil = [
-    "tanjiro",
-    "nezuko",
-    "demonio",
-    "rojo",
-    "katana",
-    "tanjiro",
-    "jabalí",
-    "negro",
-    "zenitsu",
-    "rengoku"
+    "midoriya",
+    "allmight",
+    "oneforall",
+    "bakugo",
+    "ua",
+    "fuegohielo",
+    "allmight",
+    "dedos",
+    "heroe",
+    "rana"
 ]
 
+
 let arrayRespuestasMedio = [
-    "kamado",
-    "giyu",
-    "tengen",
-    "trueno",
-    "urokodaki",
-    "kagaya",
-    "muzan",
-    "inosuke",
-    "mitsuri",
-    "muichiro"
+    "1a",
+    "engine",
+    "toya",
+    "creacion",
+    "atontado",
+    "shigaraki",
+    "explosion",
+    "festival",
+    "tokoyami",
+    "derecho"
 ]
 
 let arrayRespuestasDificil = [
-    "kamado",
-    "tomioka",
-    "muzan",
-    "yuichiro",
-    "rengoku",
-    "hinokami",
-    "lunasuperior",
-    "kokushibo",
-    "kibutsuji",
-    "rui"
+    "allforone",
+    "keigo",
+    "mic",
+    "noveno",
+    "blackwhip",
+    "koda",
+    "aizawa",
+    "kurogiri",
+    "nana",
+    "uno"
 ]
 
 
@@ -235,8 +237,8 @@ function comprobarLetra(){
 function comprobarDerrota(){
     let inputLetra = document.getElementById('input-letra')
     if(fallos >= maxFallos || segundosRestantes <= 0){
-        messageKny.textContent = `Has caído… pero como Tanjiro, siempre puedes levantarte una vez más. La respuesta era --> ${respuesta}`.toUpperCase()
-        messageKny.style.display = 'block'
+        messageMyhac.textContent = `Tu voluntad fue fuerte, pero esta vez el mal ganó. ¡No te rindas, joven aprendiz! La respuesta era --> ${respuesta}`.toUpperCase()
+        messageMyhac.style.display = 'block'
         buttonAdivina.disabled = true
         buttonAdivina.style.pointerEvents = 'none'
         buttonRestart.style.display = 'block'
@@ -244,7 +246,7 @@ function comprobarDerrota(){
         musicaFondo.pause();
         musicaFondo.currentTime = 0;
         gameOver.play()
-        clearInterval(intervaloTiempo)
+        clearInterval(intervaloTiempo);
         buttonRestart.addEventListener('click', () => {
             location.reload()
         })
@@ -254,8 +256,8 @@ function comprobarDerrota(){
 function comprobarVictoria(){
     let inputLetra = document.getElementById('input-letra')
     if(palabraCorrecta.join(',').replaceAll(',' ,'') === respuesta){
-        messageKny.textContent = '¡Respiración del éxito! Has salvado a los inocentes y honrado a tu familia.'
-        messageKny.style.display = 'block'
+        messageMyhac.textContent = '¡Plus Ultra! Has demostrado que el espíritu de un héroe vive en ti.'
+        messageMyhac.style.display = 'block'
         musicaFondo.pause();
         musicaFondo.currentTime = 0;
         win.play()
@@ -263,7 +265,7 @@ function comprobarVictoria(){
         buttonAdivina.style.pointerEvents = 'none'
         buttonRestart.style.display = 'block'
         inputLetra.disabled = true
-        clearInterval(intervaloTiempo)
+        clearInterval(intervaloTiempo);
         buttonRestart.addEventListener('click', () => {
             location.reload()
         })
@@ -296,10 +298,6 @@ function dibujar() {
         image2.style.opacity = '1'
     }
 }
-
-
-
-
 
 
 // Nueva función para mostrar botones y escuchar el click

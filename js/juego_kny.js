@@ -1,3 +1,5 @@
+import './sass/style.scss'
+
 //seleccionamos los elementos necesarios del html
 let title = document.querySelector('h1')
 let main = document.getElementById('main-principal')
@@ -5,7 +7,7 @@ let preguntas = document.getElementById('pregunta')
 let palabrasCorrectas = document.getElementById('palabra-correcta')
 let palabrasIncorrectas = document.getElementById('palabra-incorrecta')
 let buttonAdivina = document.getElementById('adivina-palabra')
-let messageSao = document.getElementById('message-sao')
+let messageKny = document.getElementById('message-kny')
 let buttonRestart = document.getElementById('restart-button')
 let image1 = document.getElementById('image-1')
 let image2 = document.getElementById('image-2')
@@ -19,13 +21,14 @@ let segundosRestantes;
 let tiempoTotal;
 let intervaloTiempo;
 
+
 function iniciarBarraProgreso(duracionSegundos) {
     segundosRestantes = duracionSegundos;
     tiempoTotal = duracionSegundos;
     const barra = document.getElementById("barra-progreso");
     const muñeco = document.getElementById("muñeco");
 
-  intervaloTiempo = setInterval(() => {
+    intervaloTiempo = setInterval(() => {
     segundosRestantes--;
 
     // Calcula el porcentaje restante
@@ -45,104 +48,104 @@ function iniciarBarraProgreso(duracionSegundos) {
 
 
 //variables de musica
-let musicaFondo = new Audio ('/src/music/sao/op_sao.mp3')
+let musicaFondo = new Audio ('/music/kny/op_kny.mp3')
 musicaFondo.volume = 0.1
 musicaFondo.loop = true
 
-let correctWord = new Audio ('/src/music/sao/acierto-sao.ogg')
+let correctWord = new Audio ('/music/kny/acierto-kny.ogg')
 correctWord.volume = 1.0
 correctWord.loop = false
 
-let wrongWord = new Audio ('/src/music/sao/error.mov')
+let wrongWord = new Audio ('/music/kny/error.mov')
 wrongWord.volume = 0.4
 wrongWord.loop = false
 
-let gameOver = new Audio ('/src/music/sao/game-over.mp3')
+let gameOver = new Audio ('/music/kny/game-over.mp3')
 gameOver.volume = 0.7
 gameOver.loop = false
 
-let win = new Audio ('/src/music/sao/win.mov')
+let win = new Audio ('/music/kny/win.mov')
 win.volume = 0.3
 win.loop = false
 
 //creamos un array con las preguntas en distintos niveles de dificultad
 let arrayPreguntasFacil = [
     "¿Nombre del protagonista?",
-    "¿Nombre de la protagonista femenina?",
-    "¿Nombre del primer juego?",
-    "¿Color del uniforme de Kirito?",
-    "¿Arma principal de Kirito?",
-    "¿Nombre real de Kirito?",
-    "¿Nombre real de Asuna?",
-    "¿Nombre del hada compañera?",
-    "¿Hermana de Kirito?",
-    "¿Mundo donde vuelan?"
+    "¿Nombre de la hermana de Tanjiro?",
+    "¿Qué es Nezuko?",
+    "¿Color del pelo de Tanjiro?",
+    "¿Arma principal de los cazadores?",
+    "¿Quién lleva una caja a la espalda?",
+    "¿Animal asociado con Inosuke?",
+    "¿Color del uniforme del Cuerpo?",
+    "¿Nombre del rubio cobarde?",
+    "¿Nombre del pilar de fuego?"
 ]
 
 let arrayPreguntasMedio = [
-    "¿Nombre completo de Kirito?",
-    "¿Nombre del gremio de Asuna?",
-    "¿Nombre del segundo juego?",
-    "¿Apodo de Kirito en ALO?",
-    "¿Tipo de arma en GGO?",
-    "¿Nombre del juego con pistolas?",
-    "¿Nombre de Death Gun?",
-    "¿Nombre real de Sinon?",
-    "¿Nombre del creador de SAO?",
-    "¿Hermana de Asuna?"
+    "¿Apellido de Tanjiro?",
+    "¿Nombre del pilar del agua?",
+    "¿Nombre del pilar del sonido?",
+    "¿Técnica de respiración de Zenitsu?",
+    "¿Quién entrena a Tanjiro?",
+    "¿Nombre del patrón?",
+    "¿Nombre del demonio principal?",
+    "¿Quién lleva dos espadas?",
+    "¿Nombre del pilar del amor?",
+    "¿Nombre del pilar de la niebla?"
 ]
 
 let arrayPreguntasDificil = [
-    "¿Apellido de Kirito?",
-    "¿Nombre del amigo de Kirito que conoce al principio?",
-    "¿Nombre del primer jefe de piso?",
-    "¿Nombre del gremio oscuro de GGO?",
-    "¿Nombre de la IA médica de Alicization?",
-    "¿Apellido de Alice?",
-    "¿Nombre del sistema de almas?",
-    "¿Villano principal de Alicization?",
-    "¿Organización enemiga de Underworld?",
-    "¿Nombre completo de Eugeo?"
+    "¿Apellido de Nezuko?",
+    "¿Apellido de Giyu?",
+    "¿Nombre del primer demonio?",
+    "¿Nombre del hermano de Muichiro?",
+    "¿Pilar que muere contra Akaza?",
+    "¿Forma final de Tanjiro (modo)?",
+    "¿Nivel más alto de los demonios?",
+    "¿Nombre de la luna superior uno?",
+    "¿Nombre real de Muzan?",
+    "¿Nombre del demonio araña?"
 ]
 
 //creamos un array con las respuestas en distintos niveles de dificultad
 let arrayRespuestasFacil = [
-    "kirito",
-    "asuna",
-    "sao",
+    "tanjiro",
+    "nezuko",
+    "demonio",
+    "rojo",
+    "katana",
+    "tanjiro",
+    "jabalí",
     "negro",
-    "espada",
-    "kazuto",
-    "asuna",
-    "yui",
-    "suguha",
-    "alfheim"
+    "zenitsu",
+    "rengoku"
 ]
 
 let arrayRespuestasMedio = [
-    "kazuto",
-    "caballeroshermandadsangre",
-    "alo",
-    "espadachinnegro",
-    "rifle",
-    "ggo",
-    "shouichi",
-    "shino",
-    "kayaba",
-    "kyouko"
+    "kamado",
+    "giyu",
+    "tengen",
+    "trueno",
+    "urokodaki",
+    "kagaya",
+    "muzan",
+    "inosuke",
+    "mitsuri",
+    "muichiro"
 ]
 
 let arrayRespuestasDificil = [
-    "kirigaya",
-    "klein",
-    "illfang",
-    "laughing",
-    "cardinal",
-    "zuberg",
-    "fluctlight",
-    "gabriel",
-    "darkterritory",
-    "eugeo"
+    "kamado",
+    "tomioka",
+    "muzan",
+    "yuichiro",
+    "rengoku",
+    "hinokami",
+    "lunasuperior",
+    "kokushibo",
+    "kibutsuji",
+    "rui"
 ]
 
 
@@ -234,8 +237,8 @@ function comprobarLetra(){
 function comprobarDerrota(){
     let inputLetra = document.getElementById('input-letra')
     if(fallos >= maxFallos || segundosRestantes <= 0){
-        messageSao.textContent = `HP a cero… has perdido esta batalla. Pero siempre puedes volver a conectar. La respuesta era --> ${respuesta}`.toUpperCase()
-        messageSao.style.display = 'block'
+        messageKny.textContent = `Has caído… pero como Tanjiro, siempre puedes levantarte una vez más. La respuesta era --> ${respuesta}`.toUpperCase()
+        messageKny.style.display = 'block'
         buttonAdivina.disabled = true
         buttonAdivina.style.pointerEvents = 'none'
         buttonRestart.style.display = 'block'
@@ -253,8 +256,8 @@ function comprobarDerrota(){
 function comprobarVictoria(){
     let inputLetra = document.getElementById('input-letra')
     if(palabraCorrecta.join(',').replaceAll(',' ,'') === respuesta){
-        messageSao.textContent = '¡Sistema liberado! Has sobrevivido al juego mortal.'
-        messageSao.style.display = 'block'
+        messageKny.textContent = '¡Respiración del éxito! Has salvado a los inocentes y honrado a tu familia.'
+        messageKny.style.display = 'block'
         musicaFondo.pause();
         musicaFondo.currentTime = 0;
         win.play()

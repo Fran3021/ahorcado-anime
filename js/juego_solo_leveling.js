@@ -1,3 +1,5 @@
+import './sass/style.scss'
+
 //seleccionamos los elementos necesarios del html
 let title = document.querySelector('h1')
 let main = document.getElementById('main-principal')
@@ -5,7 +7,7 @@ let preguntas = document.getElementById('pregunta')
 let palabrasCorrectas = document.getElementById('palabra-correcta')
 let palabrasIncorrectas = document.getElementById('palabra-incorrecta')
 let buttonAdivina = document.getElementById('adivina-palabra')
-let messageTokyoGhoul = document.getElementById('message-tokyo-ghoul')
+let messageSoloLeveling = document.getElementById('message-solo-leveling')
 let buttonRestart = document.getElementById('restart-button')
 let image1 = document.getElementById('image-1')
 let image2 = document.getElementById('image-2')
@@ -19,13 +21,14 @@ let segundosRestantes;
 let tiempoTotal;
 let intervaloTiempo;
 
+
 function iniciarBarraProgreso(duracionSegundos) {
     segundosRestantes = duracionSegundos;
     tiempoTotal = duracionSegundos;
     const barra = document.getElementById("barra-progreso");
     const muñeco = document.getElementById("muñeco");
 
-  intervaloTiempo = setInterval(() => {
+    intervaloTiempo = setInterval(() => {
     segundosRestantes--;
 
     // Calcula el porcentaje restante
@@ -45,105 +48,104 @@ function iniciarBarraProgreso(duracionSegundos) {
 
 
 //variables de musica
-let musicaFondo = new Audio ('/src/music/kny/op_kny.mp3')
+let musicaFondo = new Audio ('/music/kny/op_kny.mp3')
 musicaFondo.volume = 0.1
 musicaFondo.loop = true
 
-let correctWord = new Audio ('/src/music/myhac/acierto-myhac.mp3.flac')
-correctWord.volume = 0.7
+let correctWord = new Audio ('/music/kny/acierto-kny.ogg')
+correctWord.volume = 1.0
 correctWord.loop = false
 
-let wrongWord = new Audio ('/src/music/myhac/error.mov')
+let wrongWord = new Audio ('/music/kny/error.mov')
 wrongWord.volume = 0.4
 wrongWord.loop = false
 
-let gameOver = new Audio ('/src/music/myhac/game-over.mp3')
+let gameOver = new Audio ('/music/kny/game-over.mp3')
 gameOver.volume = 0.7
 gameOver.loop = false
 
-let win = new Audio ('/src/music/myhac/win.mov')
+let win = new Audio ('/music/kny/win.mov')
 win.volume = 0.3
 win.loop = false
 
 //creamos un array con las preguntas en distintos niveles de dificultad
 let arrayPreguntasFacil = [
     "¿Nombre del protagonista?",
-    "¿Color del pelo de Kaneki al inicio?",
-    "¿Qué ser es Kaneki?",
-    "¿Nombre de la chica ghoul del café?",
-    "¿Nombre del café donde trabaja?",
-    "¿Parte del cuerpo que usan los ghouls?",
-    "¿Nombre del mejor amigo de Kaneki?",
-    "¿Nombre de la organización que caza ghouls?",
-    "¿Color del ojo ghoul?",
-    "¿Nombre del doctor que opera a Kaneki?"
+    "¿Apellido del protagonista?",
+    "¿Nombre del sistema que lo mejora?",
+    "¿Tipo de cazador al inicio de Jinwoo?",
+    "¿Clase final de Jinwoo?",
+    "¿Color del aura de Jinwoo?",
+    "¿Nombre del hijo de Jinwoo?",
+    "¿País donde ocurre la historia?",
+    "¿Nombre del mejor amigo de Jinwoo?",
+    "¿Qué usa para invocar sombras?"
 ]
 
 let arrayPreguntasMedio = [
-    "¿Nombre completo de Kaneki?",
-    "¿Apellido de Touka?",
-    "¿Nombre del hermano de Touka?",
-    "¿Nombre del investigador con cabello blanco?",
-    "¿Nombre de la niña ghoul?",
-    "¿Nombre del tipo de kagune de Kaneki?",
-    "¿Quién entrena a Kaneki?",
-    "¿Nombre del líder del Aogiri?",
-    "¿Nombre del investigador con marcas de costura?",
-    "¿Nombre del ghoul glotona?"
+    "¿Clase del mejor cazador de EE.UU.?",
+    "¿Nombre del gremio de Jinwoo?",
+    "¿Nombre de la hermana de Jinwoo?",
+    "¿Nombre del primer caballero sombra?",
+    "¿Nombre de la cazadora que lo admira?",
+    "¿Primer jefe de doble mazmorra?",
+    "¿Padre desaparecido de Jinwoo?",
+    "¿Nombre del gremio más poderoso?",
+    "¿Organización internacional?",
+    "¿Nombre del hospital donde despierta?"
 ]
 
 let arrayPreguntasDificil = [
-    "¿Nombre real de la Búho de un ojo?",
-    "¿Nombre completo de Hide?",
-    "¿Nombre del kagune de cuatro tentáculos?",
-    "¿Organización enemiga del CCG?",
-    "¿Nombre del líder del Árbol Aogiri?",
-    "¿Nombre del ghoul que hace máscaras?",
-    "¿Nombre del científico del CCG?",
-    "¿Nombre de la quinque de Amon?",
-    "¿Nombre de la prisión de ghouls?",
-    "¿Nombre de la hija del Búho?"
+    "¿Nombre del dragón gigante?",
+    "¿Nombre real del Monarca de las Sombras?",
+    "¿Raza enemiga de los Monarcas?",
+    "¿Nombre del Monarca de los Demonios?",
+    "¿Nombre del creador del sistema?",
+    "¿Nombre del arma legendaria de Jinwoo?",
+    "¿Monarca que traiciona a los demás?",
+    "¿Rango del calabozo donde casi muere?",
+    "¿Número de estatuas en la doble mazmorra?",
+    "¿Nombre del cazador americano?"
 ]
 
 //creamos un array con las respuestas en distintos niveles de dificultad
 let arrayRespuestasFacil = [
-    "kaneki",
+    "jinwoo",
+    "sung",
+    "sistema",
+    "e",
+    "monarcadesombras",
     "negro",
-    "ghoul",
-    "touka",
-    "anteiku",
-    "kagune",
-    "hide",
-    "cCG",
-    "rojo",
-    "kanou"
+    "sung",
+    "corea",
+    "jinho",
+    "mano"
 ]
 
-
 let arrayRespuestasMedio = [
-    "kenkaneki",
-    "kirishima",
-    "ayato",
-    "kureomado",
-    "hinami",
-    "rinkaku",
-    "yomo",
-    "eto",
-    "suzuya",
-    "rize"
+    "nacional",
+    "ahjin",
+    "jinah",
+    "igris",
+    "cha",
+    "estatua",
+    "sung",
+    "hunters",
+    "scavenger",
+    "seul"
 ]
 
 let arrayRespuestasDificil = [
-    "eto",
-    "hideyoshi",
-    "rinkaku",
-    "aogiri",
-    "tatara",
-    "uta",
-    "kano",
-    "doujima",
-    "cochlea",
-    "eto"
+    "kamish",
+    "ashborn",
+    "rulers",
+    "baran",
+    "ashborn",
+    "kamish",
+    "querehsha",
+    "mazmorradoble",
+    "once",
+    "thomas"
 ]
 
 
@@ -235,8 +237,8 @@ function comprobarLetra(){
 function comprobarDerrota(){
     let inputLetra = document.getElementById('input-letra')
     if(fallos >= maxFallos || segundosRestantes <= 0){
-        messageTokyoGhoul.textContent = `Te has rendido… y el hambre te ha consumido como a un verdadero ghoul. La respuesta era --> ${respuesta}`.toUpperCase()
-        messageTokyoGhoul.style.display = 'block'
+        messageSoloLeveling.textContent = `No estabas listo para este nivel. Vuelve cuando seas más fuerte. La respuesta era --> ${respuesta}`.toUpperCase()
+        messageSoloLeveling.style.display = 'block'
         buttonAdivina.disabled = true
         buttonAdivina.style.pointerEvents = 'none'
         buttonRestart.style.display = 'block'
@@ -244,7 +246,7 @@ function comprobarDerrota(){
         musicaFondo.pause();
         musicaFondo.currentTime = 0;
         gameOver.play()
-        clearInterval(intervaloTiempo);
+        clearInterval(intervaloTiempo)
         buttonRestart.addEventListener('click', () => {
             location.reload()
         })
@@ -254,8 +256,8 @@ function comprobarDerrota(){
 function comprobarVictoria(){
     let inputLetra = document.getElementById('input-letra')
     if(palabraCorrecta.join(',').replaceAll(',' ,'') === respuesta){
-        messageTokyoGhoul.textContent = '¡Has sobrevivido… pero el monstruo en tu interior sigue hambriento.'
-        messageTokyoGhoul.style.display = 'block'
+        messageSoloLeveling.textContent = 'Tu fuerza ha roto el ciclo. El trono de las sombras es tuyo.'
+        messageSoloLeveling.style.display = 'block'
         musicaFondo.pause();
         musicaFondo.currentTime = 0;
         win.play()
@@ -263,7 +265,7 @@ function comprobarVictoria(){
         buttonAdivina.style.pointerEvents = 'none'
         buttonRestart.style.display = 'block'
         inputLetra.disabled = true
-        clearInterval(intervaloTiempo);
+        clearInterval(intervaloTiempo)
         buttonRestart.addEventListener('click', () => {
             location.reload()
         })
@@ -296,6 +298,10 @@ function dibujar() {
         image2.style.opacity = '1'
     }
 }
+
+
+
+
 
 
 // Nueva función para mostrar botones y escuchar el click

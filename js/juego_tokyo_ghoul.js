@@ -1,3 +1,5 @@
+import './sass/style.scss'
+
 //seleccionamos los elementos necesarios del html
 let title = document.querySelector('h1')
 let main = document.getElementById('main-principal')
@@ -5,7 +7,7 @@ let preguntas = document.getElementById('pregunta')
 let palabrasCorrectas = document.getElementById('palabra-correcta')
 let palabrasIncorrectas = document.getElementById('palabra-incorrecta')
 let buttonAdivina = document.getElementById('adivina-palabra')
-let messageMyhac = document.getElementById('message-myhac')
+let messageTokyoGhoul = document.getElementById('message-tokyo-ghoul')
 let buttonRestart = document.getElementById('restart-button')
 let image1 = document.getElementById('image-1')
 let image2 = document.getElementById('image-2')
@@ -45,105 +47,105 @@ function iniciarBarraProgreso(duracionSegundos) {
 
 
 //variables de musica
-let musicaFondo = new Audio ('/src/music/myhac/op_myhac.mp3')
+let musicaFondo = new Audio ('/music/kny/op_kny.mp3')
 musicaFondo.volume = 0.1
 musicaFondo.loop = true
 
-let correctWord = new Audio ('/src/music/myhac/acierto-myhac.mp3.flac')
+let correctWord = new Audio ('/music/myhac/acierto-myhac.mp3.flac')
 correctWord.volume = 0.7
 correctWord.loop = false
 
-let wrongWord = new Audio ('/src/music/myhac/error.mov')
+let wrongWord = new Audio ('/music/myhac/error.mov')
 wrongWord.volume = 0.4
 wrongWord.loop = false
 
-let gameOver = new Audio ('/src/music/myhac/game-over.mp3')
+let gameOver = new Audio ('/music/myhac/game-over.mp3')
 gameOver.volume = 0.7
 gameOver.loop = false
 
-let win = new Audio ('/src/music/myhac/win.mov')
+let win = new Audio ('/music/myhac/win.mov')
 win.volume = 0.3
 win.loop = false
 
 //creamos un array con las preguntas en distintos niveles de dificultad
 let arrayPreguntasFacil = [
     "¿Nombre del protagonista?",
-    "¿Nombre de héroe de All Might?",
-    "¿Poder heredado por Deku?",
-    "¿Rival de infancia de Deku?",
-    "¿Escuela de héroes?",
-    "¿Apodo de Todoroki?",
-    "¿Maestro de Deku?",
-    "¿Parte del cuerpo que usa Uraraka?",
-    "¿Sueño de Deku?",
-    "¿Animal de Tsuyu?"
+    "¿Color del pelo de Kaneki al inicio?",
+    "¿Qué ser es Kaneki?",
+    "¿Nombre de la chica ghoul del café?",
+    "¿Nombre del café donde trabaja?",
+    "¿Parte del cuerpo que usan los ghouls?",
+    "¿Nombre del mejor amigo de Kaneki?",
+    "¿Nombre de la organización que caza ghouls?",
+    "¿Color del ojo ghoul?",
+    "¿Nombre del doctor que opera a Kaneki?"
 ]
 
 let arrayPreguntasMedio = [
-    "¿Clase de Midoriya?",
-    "¿Don de Iida?",
-    "¿Nombre real de Dabi?",
-    "¿Don de Yaoyorozu?",
-    "¿Debilidad de Kaminari?",
-    "¿Líder inicial de la Liga?",
-    "¿Don de Bakugo?",
-    "¿Evento deportivo escolar?",
-    "¿Alumno con sombras?",
-    "¿Lado que congela Todoroki?"
+    "¿Nombre completo de Kaneki?",
+    "¿Apellido de Touka?",
+    "¿Nombre del hermano de Touka?",
+    "¿Nombre del investigador con cabello blanco?",
+    "¿Nombre de la niña ghoul?",
+    "¿Nombre del tipo de kagune de Kaneki?",
+    "¿Quién entrena a Kaneki?",
+    "¿Nombre del líder del Aogiri?",
+    "¿Nombre del investigador con marcas de costura?",
+    "¿Nombre del ghoul glotona?"
 ]
 
 let arrayPreguntasDificil = [
-    "¿Villano que creó One For All?",
-    "¿Nombre completo de Hawks?",
-    "¿Héroe con voz como arma?",
-    "¿Número de Deku con One For All?",
-    "¿Segundo don de Deku?",
-    "¿Alumno que habla con animales?",
-    "¿Héroe que perdió una pierna?",
-    "¿Villano infiltrado en U.A.?",
-    "¿Mentora de All Might?",
-    "¿Ranking de Endeavor tras All Might?"
+    "¿Nombre real de la Búho de un ojo?",
+    "¿Nombre completo de Hide?",
+    "¿Nombre del kagune de cuatro tentáculos?",
+    "¿Organización enemiga del CCG?",
+    "¿Nombre del líder del Árbol Aogiri?",
+    "¿Nombre del ghoul que hace máscaras?",
+    "¿Nombre del científico del CCG?",
+    "¿Nombre de la quinque de Amon?",
+    "¿Nombre de la prisión de ghouls?",
+    "¿Nombre de la hija del Búho?"
 ]
 
 //creamos un array con las respuestas en distintos niveles de dificultad
 let arrayRespuestasFacil = [
-    "midoriya",
-    "allmight",
-    "oneforall",
-    "bakugo",
-    "ua",
-    "fuegohielo",
-    "allmight",
-    "dedos",
-    "heroe",
-    "rana"
+    "kaneki",
+    "negro",
+    "ghoul",
+    "touka",
+    "anteiku",
+    "kagune",
+    "hide",
+    "cCG",
+    "rojo",
+    "kanou"
 ]
 
 
 let arrayRespuestasMedio = [
-    "1a",
-    "engine",
-    "toya",
-    "creacion",
-    "atontado",
-    "shigaraki",
-    "explosion",
-    "festival",
-    "tokoyami",
-    "derecho"
+    "kenkaneki",
+    "kirishima",
+    "ayato",
+    "kureomado",
+    "hinami",
+    "rinkaku",
+    "yomo",
+    "eto",
+    "suzuya",
+    "rize"
 ]
 
 let arrayRespuestasDificil = [
-    "allforone",
-    "keigo",
-    "mic",
-    "noveno",
-    "blackwhip",
-    "koda",
-    "aizawa",
-    "kurogiri",
-    "nana",
-    "uno"
+    "eto",
+    "hideyoshi",
+    "rinkaku",
+    "aogiri",
+    "tatara",
+    "uta",
+    "kano",
+    "doujima",
+    "cochlea",
+    "eto"
 ]
 
 
@@ -235,8 +237,8 @@ function comprobarLetra(){
 function comprobarDerrota(){
     let inputLetra = document.getElementById('input-letra')
     if(fallos >= maxFallos || segundosRestantes <= 0){
-        messageMyhac.textContent = `Tu voluntad fue fuerte, pero esta vez el mal ganó. ¡No te rindas, joven aprendiz! La respuesta era --> ${respuesta}`.toUpperCase()
-        messageMyhac.style.display = 'block'
+        messageTokyoGhoul.textContent = `Te has rendido… y el hambre te ha consumido como a un verdadero ghoul. La respuesta era --> ${respuesta}`.toUpperCase()
+        messageTokyoGhoul.style.display = 'block'
         buttonAdivina.disabled = true
         buttonAdivina.style.pointerEvents = 'none'
         buttonRestart.style.display = 'block'
@@ -254,8 +256,8 @@ function comprobarDerrota(){
 function comprobarVictoria(){
     let inputLetra = document.getElementById('input-letra')
     if(palabraCorrecta.join(',').replaceAll(',' ,'') === respuesta){
-        messageMyhac.textContent = '¡Plus Ultra! Has demostrado que el espíritu de un héroe vive en ti.'
-        messageMyhac.style.display = 'block'
+        messageTokyoGhoul.textContent = '¡Has sobrevivido… pero el monstruo en tu interior sigue hambriento.'
+        messageTokyoGhoul.style.display = 'block'
         musicaFondo.pause();
         musicaFondo.currentTime = 0;
         win.play()
